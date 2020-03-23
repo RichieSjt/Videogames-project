@@ -8,18 +8,21 @@ public class Player : MonoBehaviour{
     private bool facingRight;
 
     private HealthSystem healthSystem;
+    public HealthBar healthBar;
     private Animator anim;
 
-    void Start(){
+    private void Awake(){
         healthSystem = new HealthSystem(100);
+        healthBar.Setup(healthSystem);
+
         anim = gameObject.GetComponent<Animator>();
         facingRight = true;
     }
 
-    void Update(){
+    private void Update(){
 
-        float x = Input.GetAxis("Horizontal") * speed;
-        float y = Input.GetAxis("Vertical") * speed;
+        float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 
         gameObject.transform.Translate(new Vector3(Mathf.Abs(x), y, 0));
 
@@ -47,8 +50,8 @@ public class Player : MonoBehaviour{
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.tag == "Enemy") {
-            //Meteor meteor = collision.GetComponent<Meteor>();
-            //healthSystem.TakeDamage(meteor.GetDamage());
+            Enemy enemy = collision.GetComponent<Enemy>();
+            healthSystem.TakeDamage(enemy.GetDamage());
             if (healthSystem.GetHealth() <= 0)
                 Destroy(gameObject); 
         }
