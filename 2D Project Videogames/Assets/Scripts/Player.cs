@@ -10,6 +10,7 @@ public class Player : MonoBehaviour{
     private HealthSystem healthSystem;
     public HealthBar healthBar;
     private Animator anim;
+    //private Rigidbody2D rb;
 
     private void Awake(){
         healthSystem = new HealthSystem(100);
@@ -17,14 +18,19 @@ public class Player : MonoBehaviour{
 
         anim = gameObject.GetComponent<Animator>();
         facingRight = true;
+        //rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update(){
+        Move();
+    }
 
+    private void Move(){
         float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        Vector3 moveDirection = new Vector3(Mathf.Abs(x), y, 0);
 
-        gameObject.transform.Translate(new Vector3(Mathf.Abs(x), y, 0));
+        transform.Translate(moveDirection);
 
         //Animation condition
         if(Mathf.Abs(x) > 0 || Mathf.Abs(y) > 0){
