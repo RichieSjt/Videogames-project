@@ -23,6 +23,7 @@ public class Player : MonoBehaviour{
 
     private void Update(){
         Move();
+        CheckAttack();
     }
 
     private void Move(){
@@ -46,6 +47,16 @@ public class Player : MonoBehaviour{
         if(x < 0 && facingRight) {
             Flip();
         }
+    }
+
+    private void CheckAttack(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            anim.SetBool("IsAttacking", true);
+            Invoke("ExitAttack", 0.3f);
+        }
+    }
+    private void ExitAttack(){
+        anim.SetBool("IsAttacking", false);
     }
 
     private void Flip() {
