@@ -7,7 +7,7 @@ public class Player : MonoBehaviour{
     public float speed = 0.12f;
     private bool facingRight;
 
-    private HealthSystem healthSystem;
+    public HealthSystem healthSystem;
     public HealthBar healthBar;
     private Animator anim;
     //private Rigidbody2D rb;
