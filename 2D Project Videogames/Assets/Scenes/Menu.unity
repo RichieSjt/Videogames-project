@@ -460,7 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 956711887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2113e619937edb646a41160919c474ed, type: 3}
+  m_Script: {fileID: 11500000, guid: fe302a5f9c0fafd4087f67a05c0611fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1048333855
@@ -546,7 +546,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 956711889}
-        m_MethodName: Salir
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 956711889}
-        m_MethodName: EmpezarJuego
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
