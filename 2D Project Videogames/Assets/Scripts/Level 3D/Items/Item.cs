@@ -9,4 +9,10 @@ public class Item : ScriptableObject{
     new public string name = "New Item";
     public bool isDefaultItem = false;
 
+    public virtual void Use(){
+        //Use the item
+        #warning This method must be overwritten depending on what the picked up object does
+        
+        Debug.Log("Using " + name);
+    }
 }
