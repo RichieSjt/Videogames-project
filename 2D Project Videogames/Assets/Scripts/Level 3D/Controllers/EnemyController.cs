@@ -14,16 +14,12 @@ public class EnemyController : MonoBehaviour{
 
     [Header("Movement settings")]
     [SerializeField] public float lookRadius = 4f;
-    [SerializeField] private bool facingRight;
 
     void Start(){
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        facingRight = true;
-        
     }
 
-    // Update is called once per frame
     void Update(){
         //Distance between the player and the enemy
         float distanceBetween = Vector3.Distance(target.position, transform.position);
@@ -39,17 +35,12 @@ public class EnemyController : MonoBehaviour{
             anim.SetBool("Attack", true);
         }
 
-        if(target.position.x > transform.position.x && !facingRight) {
-            Flip();
+        if(target.position.x > transform.position.x) {
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        if(target.position.x < transform.position.x && facingRight) {
-            Flip();
+        if(target.position.x < transform.position.x) {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-    }
-
-    private void Flip() {
-        transform.Rotate(0f, 180f, 0f);
-        facingRight = !facingRight;
     }
 
     private void OnDrawGizmosSelected() {
