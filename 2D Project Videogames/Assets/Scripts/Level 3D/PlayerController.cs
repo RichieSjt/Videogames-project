@@ -9,12 +9,15 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
     private float verticalVelocity;
 
+    [Header("Animator")]
+    [SerializeField] private Animator anim;
+    
     [Header("Movement configuration")]
-    [SerializeField] private float speedX = 5;
-    [SerializeField] private float speedZ = 5;
-    [SerializeField] private float gravity = 0.25f;
+    [SerializeField] private float speedX = 10;
+    [SerializeField] private float speedZ = 10;
+    [SerializeField] private float gravity = 0.2f;
     [SerializeField] private float jumpForce = 8f;
-    [SerializeField] private float maxVelocity = 5f;
+    [SerializeField] private float maxVelocity = 8f;
 
     [Header("Ground Check Raycast")]
     [SerializeField] private float extremitiesOffset = 0.5f;   
@@ -31,8 +34,10 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 inputVector = Movement();
         Vector3 moveVector = new Vector3(inputVector.x*speedX,0,inputVector.y*speedZ);
+        anim.SetFloat("Speed", moveVector.magnitude);
         
         grounded = Grounded();
+        anim.SetBool("Grounded", grounded);
         if (grounded)
         {
           verticalVelocity = -1; //Slight Gravity
@@ -41,6 +46,7 @@ public class PlayerController : MonoBehaviour
           {
               verticalVelocity = jumpForce;
               slope = Vector3.up;
+              anim.SetTrigger("Jump");
           }  
         }else
         {
@@ -53,10 +59,9 @@ public class PlayerController : MonoBehaviour
         }
 
         moveVector.y = verticalVelocity; //Apply verticalVelocity to movement vector
+        anim.SetFloat("VerticalVelocity", verticalVelocity);
 
-        //Angle the vector to macth floor's curves
-        if (slope != Vector3.up)
-            moveVector = StayFloor(moveVector);
+        if (slope != Vector3.up) moveVector = StayFloor(moveVector); //Angle the vector to macth floor's curves
         
         controller.Move(moveVector*Time.deltaTime); //Move the controller
     }
@@ -65,9 +70,19 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 v = Vector3.zero;
 
-        v.x = Input.GetAxisRaw("Horizontal");
+        float x = Input.GetAxisRaw("Horizontal");
+        CharacterFacing(x);
+        v.x = x;
         v.y = Input.GetAxisRaw("Vertical");
         return v.normalized;
+    }
+
+    private void CharacterFacing(float x)
+    {
+        if (x > 0.1)
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        if (x < -0.1)
+            transform.localScale = new Vector3(-1f, 1f, 1f);
     }
 
     private Vector3 StayFloor(Vector3 moveVector)
