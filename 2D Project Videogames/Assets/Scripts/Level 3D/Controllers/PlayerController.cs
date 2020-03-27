@@ -25,8 +25,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float distanceGrounded = 0.15f;    
     [SerializeField] private float slopeThereshold = 0.55f;
 
+    [Header("Health")]
+    [SerializeField] public int maxHealth = 100;
+    private int currentHealth;
+
     private void Awake(){
         controller = GetComponent<CharacterController>();
+    }
+
+    void Start(){
+        currentHealth = maxHealth;
     }
 
     private void Update(){
@@ -132,6 +140,28 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("Player health: "+currentHealth);
+        anim.SetTrigger("Hurt");
+
+        if(currentHealth <= 0)
+        {
+            Die();
+            Debug.Log("Player Die");
+        }
+    }
+
+    private void Die()
+    {
+        anim.SetBool("IsDead", true);
+
+        //Disable enemy
+        GetComponent<CharacterController>().enabled = false;
+        this.enabled = false;
     }
 
 }

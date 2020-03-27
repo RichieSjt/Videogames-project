@@ -19,6 +19,14 @@ public class EnemyController : MonoBehaviour{
     [SerializeField] public int maxHealth = 100;
     private int currentHealth;
 
+    [Header("Attack Settings")]
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private int attackDamage = 40;
+    [SerializeField] private float attackRate = 2f;
+    private float nextAttackTime = 0f;
+
     void Start(){
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -26,6 +34,16 @@ public class EnemyController : MonoBehaviour{
     }
 
     void Update(){
+        
+        
+        //--------------------------------------------------------------------
+        //TEST ATTACK KEY T
+        if (Input.GetKeyDown(KeyCode.T))
+            {
+                Attack();
+            }
+        //--------------------------------------------------------------------
+
         //Distance between the player and the enemy
         float distanceBetween = Vector3.Distance(target.position, transform.position);
 
@@ -33,11 +51,9 @@ public class EnemyController : MonoBehaviour{
             agent.SetDestination(target.position);
             anim.SetBool("IsMoving", true);
         }else if(distanceBetween > lookRadius){
-            anim.SetBool("Attack", false);
             anim.SetBool("IsMoving", false);
         }else if(distanceBetween <= agent.stoppingDistance){
-            // Attack
-            anim.SetBool("Attack", true);
+            Attack();
         }
 
         if(target.position.x > transform.position.x) {
@@ -48,10 +64,24 @@ public class EnemyController : MonoBehaviour{
         }
     }
 
+    private void Attack()
+    {
+        anim.SetTrigger("Attack");
+
+        //Detect player in range of attack
+        Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayer);
+
+        //Damage player
+        foreach (Collider player in hitPlayer)
+        {
+            player.GetComponent<PlayerController>().TakeDamage(attackDamage);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Enemy health: "+currentHealth);
+        //Debug.Log("Enemy health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
         if(currentHealth <= 0)
@@ -70,6 +100,7 @@ public class EnemyController : MonoBehaviour{
     }
 
     private void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }

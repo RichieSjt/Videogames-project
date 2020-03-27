@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 92748747}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14550
+  m_Name: pb_Mesh14592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -448,7 +448,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14354
+  m_Name: pb_Mesh14396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1171,7 +1171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361837068}
   - component: {fileID: 361837067}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396038870}
   - component: {fileID: 396038869}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,6 +1459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush0 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732178190550495152, guid: 8eadfb48422f2814f951c7b4b8d36611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4732178190550495155, guid: 8eadfb48422f2814f951c7b4b8d36611,
         type: 3}
@@ -1574,6 +1579,7 @@ MonoBehaviour:
   innerVerticalOffset: 0.25
   distanceGrounded: 0.15
   slopeThereshold: 0.55
+  maxHealth: 100
 --- !u!143 &603403509
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1606,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1125095670}
   attackPoint: {fileID: 844120410}
-  attackRange: 0.6
+  attackRange: 0.8
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -1629,6 +1635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush0 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732178190550495152, guid: 8eadfb48422f2814f951c7b4b8d36611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4732178190550495155, guid: 8eadfb48422f2814f951c7b4b8d36611,
         type: 3}
@@ -1818,7 +1829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14614
+  m_Name: pb_Mesh14656
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1985,7 +1996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795082839}
   - component: {fileID: 795082838}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2065,7 +2076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 836352175}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844120409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.85, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 603403507}
@@ -2396,6 +2407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush0 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4732178190550495152, guid: 8eadfb48422f2814f951c7b4b8d36611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4732178190550495155, guid: 8eadfb48422f2814f951c7b4b8d36611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2469,7 +2485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055241960}
   - component: {fileID: 1055241959}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3403,6 +3419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3478,6 +3499,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1027388632}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1217327466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217327467}
+  m_Layer: 9
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217327467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217327466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1235937830}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235937829
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 908034109273639919}
+  - {fileID: 1217327467}
   m_Father: {fileID: 983048943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3552,7 +3604,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1235937829}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -3582,6 +3634,13 @@ MonoBehaviour:
   agent: {fileID: 0}
   lookRadius: 4
   maxHealth: 100
+  attackPoint: {fileID: 1217327467}
+  attackRange: 0.7
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 40
+  attackRate: 2
 --- !u!224 &1262486104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3910352700089013551, guid: d0e5b08ba33c7e44985a9b6992f56032,
@@ -3599,6 +3658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
@@ -3673,7 +3737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295609403}
   - component: {fileID: 1295609402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3877,7 +3941,7 @@ GameObject:
   - component: {fileID: 1349609980}
   - component: {fileID: 1349609979}
   - component: {fileID: 1349609978}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Arch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6585,6 +6649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush0 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4732178190550495152, guid: 8eadfb48422f2814f951c7b4b8d36611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4732178190550495155, guid: 8eadfb48422f2814f951c7b4b8d36611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6708,6 +6777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 882385969279969845, guid: 9168d6c823d9a5e4d99ce22487fdd631,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9168d6c823d9a5e4d99ce22487fdd631, type: 3}
@@ -6905,7 +6979,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14480
+  m_Name: pb_Mesh14522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7074,6 +7148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7213,7 +7292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573928922}
   - component: {fileID: 1573928921}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7290,7 +7369,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14458
+  m_Name: pb_Mesh14500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7602,6 +7681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
@@ -7921,6 +8005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
@@ -8715,7 +8804,7 @@ GameObject:
   - component: {fileID: 2100526301}
   - component: {fileID: 2100526300}
   - component: {fileID: 2100526299}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9925,7 +10014,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14668
+  m_Name: pb_Mesh14710
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10120,6 +10209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree1
       objectReference: {fileID: 0}
+    - target: {fileID: 187724053357613059, guid: e79724e8a7b213847b695855ff49c689,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 187724053357613069, guid: e79724e8a7b213847b695855ff49c689,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10243,6 +10337,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree2
+      objectReference: {fileID: 0}
+    - target: {fileID: 882385969279969845, guid: 9168d6c823d9a5e4d99ce22487fdd631,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9168d6c823d9a5e4d99ce22487fdd631, type: 3}
