@@ -15,9 +15,14 @@ public class EnemyController : MonoBehaviour{
     [Header("Movement settings")]
     [SerializeField] public float lookRadius = 4f;
 
+    [Header("Health")]
+    [SerializeField] public int maxHealth = 100;
+    private int currentHealth;
+
     void Start(){
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        currentHealth = maxHealth;
     }
 
     void Update(){
@@ -41,6 +46,27 @@ public class EnemyController : MonoBehaviour{
         if(target.position.x < transform.position.x) {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log("Enemy health: "+currentHealth);
+        anim.SetTrigger("Hurt");
+
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        anim.SetBool("IsDead", true);
+
+        //Disable enemy
+        GetComponent<CapsuleCollider>().enabled = false;
+        this.enabled = false;
     }
 
     private void OnDrawGizmosSelected() {
