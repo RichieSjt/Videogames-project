@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,11 +27,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float slopeThereshold = 0.55f;
 
     [Header("Health")]
-    [SerializeField] public int maxHealth = 100;
+    public int maxHealth = 100;
     private int currentHealth;
+
+    public HealthSystem healthSystem;
+    public HealthBar healthBar;
 
     private void Awake(){
         controller = GetComponent<CharacterController>();
+        
+        healthSystem = new HealthSystem(maxHealth);
+        healthBar.Setup(healthSystem);
     }
 
     void Start(){
@@ -142,16 +149,21 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public float GetHealthPercent() {
+        return (float) currentHealth / maxHealth; 
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthSystem.TakeDamage(damage);
+
         Debug.Log("Player health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
         if(currentHealth <= 0)
         {
             Die();
-            Debug.Log("Player Die");
         }
     }
 

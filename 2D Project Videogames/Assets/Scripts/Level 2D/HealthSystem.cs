@@ -20,6 +20,9 @@ public class HealthSystem{
 
     public void TakeDamage(int damage) {
         health -= damage;
+        if(health<0) {
+            health = 0;
+        }
 
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
