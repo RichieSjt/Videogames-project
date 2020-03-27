@@ -52,7 +52,8 @@ public class EnemyController : MonoBehaviour{
             anim.SetBool("IsMoving", true);
         }else if(distanceBetween > lookRadius){
             anim.SetBool("IsMoving", false);
-        }else if(distanceBetween <= agent.stoppingDistance){
+        }
+        if(distanceBetween <= agent.stoppingDistance){
             Attack();
         }
 
