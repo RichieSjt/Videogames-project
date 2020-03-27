@@ -16,8 +16,8 @@ TagManager:
   - 
   - Player
   - Enemies
-  - 
-  - 
+  - WallCollider
+  - Environment
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: GameObjects
     uniqueID: 3031629427
+    locked: 0
+  - name: Player
+    uniqueID: 2694308767
     locked: 0
   - name: PlayerInterface
     uniqueID: 1007372781
