@@ -35,28 +35,23 @@ public class EnemyController : MonoBehaviour{
     }
 
     void Update(){
-        
-        
-        //--------------------------------------------------------------------
-        //TEST ATTACK KEY T
-        if (Input.GetKeyDown(KeyCode.T))
-            {
-                Attack();
-            }
-        //--------------------------------------------------------------------
-
-        //Distance between the player and the enemy
         float distanceBetween = Vector3.Distance(target.position, transform.position);
-
+        
         if(distanceBetween <= lookRadius){
             agent.SetDestination(target.position);
             anim.SetBool("IsMoving", true);
         }else if(distanceBetween > lookRadius){
             anim.SetBool("IsMoving", false);
         }
-        if(distanceBetween <= agent.stoppingDistance){
-            Attack();
+
+        if(distanceBetween <= 0.8f){
+            if (Time.time >= nextAttackTime) {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
+
+
 
         if(target.position.x > transform.position.x) {
             transform.localScale = new Vector3(1f, 1f, 1f);
