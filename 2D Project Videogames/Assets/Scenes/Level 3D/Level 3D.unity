@@ -1640,7 +1640,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackDamage: 40
+  attackDamage: 50
   attackRate: 2
 --- !u!224 &612058617 stripped
 RectTransform:
@@ -1853,7 +1853,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27974
+  m_Name: pb_Mesh14658
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

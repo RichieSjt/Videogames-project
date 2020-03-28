@@ -160,7 +160,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 40
+  attackDamage: 20
   attackRate: 2
 --- !u!195 &5639132896451657879
 NavMeshAgent:

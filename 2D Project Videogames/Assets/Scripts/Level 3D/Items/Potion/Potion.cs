@@ -6,6 +6,7 @@ public class Potion : Item{
     public override void Use(){
         //Modify the player health or mana
         //Remove the potion from the inventory
+        base.Use();
     }
 
     public void RemoveFromInventory(){

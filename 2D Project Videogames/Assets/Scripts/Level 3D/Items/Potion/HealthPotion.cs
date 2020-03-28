@@ -11,6 +11,7 @@ public class HealthPotion : Potion{
     }
 
     public override void Use(){
+        base.Use();
         //heal the player
         //player.GetComponent<HealthSystem>().Heal(healAmount);
         //Remove the potion from the inventory
