@@ -149,19 +149,14 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    public float GetHealthPercent() {
-        return (float) currentHealth / maxHealth; 
-    }
-
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
         healthSystem.TakeDamage(damage);
 
-        Debug.Log("Player health: "+currentHealth);
+        Debug.Log("Player health: "+ healthSystem.GetHealth());
         anim.SetTrigger("Hurt");
 
-        if(currentHealth <= 0)
+        if(healthSystem.GetHealth() <= 0)
         {
             Die();
         }

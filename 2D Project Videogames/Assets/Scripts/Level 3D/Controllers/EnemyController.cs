@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour{
 
     [Header("Health")]
     [SerializeField] public int maxHealth = 100;
-    private int currentHealth;
 
     [Header("Attack Settings")]
     [SerializeField] private Transform attackPoint;
@@ -27,10 +26,12 @@ public class EnemyController : MonoBehaviour{
     [SerializeField] private float attackRate = 2f;
     private float nextAttackTime = 0f;
 
+    public HealthSystem healthSystem;
+
     void Start(){
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        currentHealth = maxHealth;
+        healthSystem = new HealthSystem(maxHealth);
     }
 
     void Update(){
@@ -81,11 +82,11 @@ public class EnemyController : MonoBehaviour{
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        healthSystem.TakeDamage(damage);
         //Debug.Log("Enemy health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
-        if(currentHealth <= 0)
+        if(healthSystem.GetHealth() <= 0)
         {
             Die();
         }
