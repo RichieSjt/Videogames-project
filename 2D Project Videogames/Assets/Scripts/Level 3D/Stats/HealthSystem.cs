@@ -6,24 +6,28 @@ public class HealthSystem : MonoBehaviour{
     public int maxHealth;
     public event EventHandler OnHealthChanged;
 
-    public int GetHealth() {
+    public int GetHealth()
+    {
         return health;
     }
 
-    public float GetHealthPercent() {
+    public float GetHealthPercent()
+    {
         return (float) health / maxHealth; 
     }
 
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damage)
+    {
         health -= damage;
-        if(health<0) {
+        if(health<0)
+        {
             health = 0;
         }
-
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void Heal(int healAmount) {
+    public void Heal(int healAmount)
+    {
         health += healAmount;
         if (health > maxHealth)
             health = maxHealth;

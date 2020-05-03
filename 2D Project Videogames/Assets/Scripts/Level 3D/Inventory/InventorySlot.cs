@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour{
-
+public class InventorySlot : MonoBehaviour
+{
     Item item;
 
     public Image icon;
     public Button removeButton;
 
-    public void AddItem(Item newItem){
+    public void AddItem(Item newItem)
+    {
         item = newItem;
 
         icon.sprite = item.icon;
@@ -16,19 +17,23 @@ public class InventorySlot : MonoBehaviour{
         removeButton.interactable = true;
     }
 
-    public void ClearSlot(){
+    public void ClearSlot()
+    {
         item = null;
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
     }
 
-    public void OnRemoveButton(){
+    public void OnRemoveButton()
+    {
         Inventory.instance.Remove(item);
     }
 
-    public void UseItem(){
-        if(item != null){
+    public void UseItem()
+    {
+        if(item != null)
+        {
             item.Use();
         }
     }

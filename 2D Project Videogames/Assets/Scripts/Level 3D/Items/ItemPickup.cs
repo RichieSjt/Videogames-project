@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 
-public class ItemPickup : Interactable{
-
+public class ItemPickup : Interactable
+{
     public Item item;
 
-    public override void Interact(){
+    public override void Interact()
+    {
         Pickup();
     }
-    private void Pickup(){
+    private void Pickup()
+    {
         Debug.Log("Picking up " + item.name);
         
         //If the item was picked up succesfuly we destroy the object

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour{
-
+public class InventoryUI : MonoBehaviour
+{
     Inventory inventory;
     InventorySlot[] slots;
 
@@ -11,24 +11,32 @@ public class InventoryUI : MonoBehaviour{
     public GameObject inventoryUI;
 
 
-    void Start(){
+    void Start()
+    {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I)){
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
+        {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }
 
-    void UpdateUI(){
-        for(int i = 0; i < slots.Length; i++){
-            if(i < inventory.items.Count){
+    void UpdateUI()
+    {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if(i < inventory.items.Count)
+            {
                 slots[i].AddItem(inventory.items[i]);
-            }else{
+            }
+            else
+            {
                 slots[i].ClearSlot();
             }
         }

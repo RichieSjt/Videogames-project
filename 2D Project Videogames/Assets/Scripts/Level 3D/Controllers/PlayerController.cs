@@ -33,18 +33,21 @@ public class PlayerController : MonoBehaviour
     public HealthSystem healthSystem;
     public HealthBar healthBar;
 
-    private void Awake(){
+    private void Awake()
+    {
         controller = GetComponent<CharacterController>();
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
         healthBar.Setup(healthSystem);
     }
 
-    void Start(){
+    void Start()
+    {
         currentHealth = maxHealth;
     }
 
-    private void Update(){
+    private void Update()
+    {
         Vector3 inputVector = Movement();
         Vector3 moveVector = new Vector3(inputVector.x*speedX,0,inputVector.y*speedZ);
         anim.SetFloat("Speed", moveVector.magnitude);
@@ -79,7 +82,8 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveVector*Time.deltaTime); //Move the controller
     }
 
-    private Vector3 Movement(){
+    private Vector3 Movement()
+    {
         Vector3 v = Vector3.zero;
 
         float x = Input.GetAxisRaw("Horizontal");
@@ -89,20 +93,23 @@ public class PlayerController : MonoBehaviour
         return v.normalized;
     }
 
-    private void CharacterFacing(float x){
+    private void CharacterFacing(float x)
+    {
         if (x > 0.1)
             transform.localScale = new Vector3(1f, 1f, 1f);
         if (x < -0.1)
             transform.localScale = new Vector3(-1f, 1f, 1f);
     }
 
-    private Vector3 StayFloor(Vector3 moveVector){
+    private Vector3 StayFloor(Vector3 moveVector)
+    {
         Vector3 right = new Vector3(slope.y, -slope.x, 0).normalized;
         Vector3 forward = new Vector3(0, -slope.z, slope.y).normalized;
         return right * moveVector.x + forward * moveVector.z;
     }
 
-    private bool Grounded(){
+    private bool Grounded()
+    {
         if (verticalVelocity>0)
             return false;
 

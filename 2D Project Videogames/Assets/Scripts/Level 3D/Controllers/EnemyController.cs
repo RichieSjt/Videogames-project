@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour{
+public class EnemyController : MonoBehaviour
+{
 
     [Header("Animator")]    
     [SerializeField] private Animator anim;
@@ -28,25 +29,32 @@ public class EnemyController : MonoBehaviour{
 
     public HealthSystem healthSystem;
 
-    void Start(){
+    void Start()
+    {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
     }
 
-    void Update(){
+    void Update()
+    {
         float distanceBetween = Vector3.Distance(target.position, transform.position);
         
-        if(distanceBetween <= lookRadius){
+        if(distanceBetween <= lookRadius)
+        {
             agent.SetDestination(target.position);
             anim.SetBool("IsMoving", true);
-        }else if(distanceBetween > lookRadius){
+        }
+        else if(distanceBetween > lookRadius)
+        {
             anim.SetBool("IsMoving", false);
         }
 
-        if(distanceBetween <= 0.8f){
-            if (Time.time >= nextAttackTime) {
+        if(distanceBetween <= 0.8f)
+        {
+            if (Time.time >= nextAttackTime)
+            {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -54,10 +62,12 @@ public class EnemyController : MonoBehaviour{
 
 
 
-        if(target.position.x > transform.position.x) {
+        if(target.position.x > transform.position.x)
+        {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        if(target.position.x < transform.position.x) {
+        if(target.position.x < transform.position.x)
+        {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }

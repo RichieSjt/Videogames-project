@@ -1,20 +1,25 @@
 ﻿
 using UnityEngine;
 
-public class Interactable : MonoBehaviour{
+public class Interactable : MonoBehaviour
+{
     
     [SerializeField]Transform player;
     public float radius = 0.7f;
     private bool hasInteracted = false;
     
-    private void Start() {
+    private void Start()
+    {
         player = PlayerManager.instance.player.transform;
     }
 
-    public void Update() {
-        if(!hasInteracted){
+    public void Update()
+    {
+        if(!hasInteracted)
+        {
             float distanceBetween = Vector3.Distance(player.position, transform.position);
-            if(distanceBetween <= radius){
+            if(distanceBetween <= radius)
+            {
                 Debug.Log("Interact");
                 Interact();
                 hasInteracted = true;
@@ -22,11 +27,13 @@ public class Interactable : MonoBehaviour{
         }
     }
 
-    public virtual void Interact(){
+    public virtual void Interact()
+    {
         //This method is meant to be overwritten
     }
 
-    private void OnDrawGizmosSelected() {
+    private void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
