@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
     private void Update()
     {
         if (Time.time >= nextAttackTime) {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;

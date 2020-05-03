@@ -13,7 +13,7 @@ public class Player : MonoBehaviour{
     //private Rigidbody2D rb;
 
     private void Awake(){
-        healthSystem = new HealthSystem(100);
+        //healthSystem = new HealthSystem(100);
         healthBar.Setup(healthSystem);
 
         anim = gameObject.GetComponent<Animator>();

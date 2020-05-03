@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBar : MonoBehaviour{
-    private HealthSystem healthSystem;
+    public HealthSystem healthSystem;
 
     private void Start() {
         transform.Find("Bar").localScale = new Vector3(1, 0.2018672f);

@@ -1,14 +1,10 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 
-public class HealthSystem{
-    private int health;
-    private int maxHealth;
+public class HealthSystem : MonoBehaviour{
+    public int health;
+    public int maxHealth;
     public event EventHandler OnHealthChanged;
-
-    public HealthSystem(int maxHealth) {
-        this.maxHealth = maxHealth;
-        health = maxHealth;
-    }
 
     public int GetHealth() {
         return health;

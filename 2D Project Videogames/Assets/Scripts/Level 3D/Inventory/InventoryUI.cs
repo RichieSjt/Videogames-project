@@ -19,7 +19,7 @@ public class InventoryUI : MonoBehaviour{
     }
 
     void Update() {
-        if(Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.B)){
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I)){
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }

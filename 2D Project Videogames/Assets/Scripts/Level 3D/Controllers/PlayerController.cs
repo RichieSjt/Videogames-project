@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake(){
         controller = GetComponent<CharacterController>();
-        
-        healthSystem = new HealthSystem(maxHealth);
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.maxHealth = maxHealth;
         healthBar.Setup(healthSystem);
     }
 

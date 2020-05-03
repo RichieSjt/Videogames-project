@@ -31,7 +31,8 @@ public class EnemyController : MonoBehaviour{
     void Start(){
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        healthSystem = new HealthSystem(maxHealth);
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.maxHealth = maxHealth;
     }
 
     void Update(){
