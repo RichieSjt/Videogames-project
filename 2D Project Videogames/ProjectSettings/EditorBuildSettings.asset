@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: 50e1637635c1714489227e2fed5ee4bb
   - enabled: 1
-    path: Assets/Scenes/MainLevel/Level 3D.unity
+    path: Assets/Scenes/Levels/Forest_level.unity
     guid: 8746b0284c3f13845bb88d44d334389d
   - enabled: 0
     path: 

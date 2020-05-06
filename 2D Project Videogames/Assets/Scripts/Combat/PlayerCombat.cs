@@ -9,7 +9,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Attack Settings")]
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private float attackRange = 0.8f;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private int attackDamage = 40;
     [SerializeField] private float attackRate = 2f;
