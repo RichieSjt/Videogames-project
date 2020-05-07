@@ -117,7 +117,7 @@ public class SlimeController : Enemy
     {
         anim.SetBool("IsDead", true);
 
-        SoundManager.PlaySound("SlimeDie", 0.5f, 1f);
+        SoundManager.PlaySound("SlimeDie", 0.5f, 1.5f);
 
         //Disable enemy
         //GetComponent<CapsuleCollider>().enabled = false;

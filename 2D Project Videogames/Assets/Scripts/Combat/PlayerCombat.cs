@@ -18,6 +18,10 @@ public class PlayerCombat : MonoBehaviour
     public int magicDamage = 30;
     public int manaPerAttack = 40;
     public float magicAttackRate = 1f;
+
+    [Header("Fire points")]
+    public Transform firepoint;
+    public Transform firepointEnd;
     
     private void Update()
     {
@@ -56,5 +60,6 @@ public class PlayerCombat : MonoBehaviour
         playerAnim.SetTrigger("Attack");
         ManaSystem playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
         playerMS.ReduceMana(manaPerAttack);
+        Vector3 shootDirection = (firepoint.position - firepointEnd).normalized;
     }
 }

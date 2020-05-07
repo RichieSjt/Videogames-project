@@ -27,10 +27,12 @@ public class SoundManager : MonoBehaviour
             case "SlimeMove":
                 audio.PlayOneShot(SlimeMove);
                 audio.volume = volume;
+                audio.pitch = pitch;
                 break;
             case "SlimeDie":
                 audio.PlayOneShot(SlimeDie);
                 audio.volume = volume;
+                audio.pitch = pitch;
                 break;
         }
     }
