@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     
     [Header("Movement settings")]
     public float lookRadius = 0;
+    public float speed = 0;
     
     [Header("Health")]
     private HealthSystem healthSystem;
@@ -51,11 +52,13 @@ public class EnemyController : MonoBehaviour
         if(distanceBetween <= lookRadius)
         {
             agent.SetDestination(target.position);
+            agent.speed = speed;
             anim.SetBool("IsMoving", true);
         }
         else if(distanceBetween > lookRadius)
         {
             anim.SetBool("IsMoving", false);
+            agent.speed = 0;
         }
         if(distanceBetween <= 0.8f)
         {
