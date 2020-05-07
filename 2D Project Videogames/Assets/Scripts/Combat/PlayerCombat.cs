@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     [Header("Animator")]
-    [SerializeField] private Animator anim;
+    public Animator anim;
 
     [Header("Attack Settings")]
-    [SerializeField] private GameObject hitBox;
-    [SerializeField] private int attackDamage = 50;
-    [SerializeField] private float attackRate = 2f;
+    public GameObject hitBox;
+    public int attackDamage = 50;
+    public float attackRate = 2f;
     private float nextAttackTime = 0f;
     
     private void Update()

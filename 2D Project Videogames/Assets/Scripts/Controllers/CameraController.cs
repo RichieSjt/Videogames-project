@@ -5,16 +5,16 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField] private Transform follow;
+    public Transform follow;
 
     [Header("Settings")]
-    [SerializeField] private Vector3 offset = new Vector3(0, 10, -10);
-    [SerializeField] private Vector3 minPosition = new Vector3(0, 0, 0);
-    [SerializeField] private Vector3 maxPosition = new Vector3(0, 0, 0);
+    public Vector3 offset = new Vector3(0, 10, -10);
+    public Vector3 minPosition = new Vector3(0, 0, 0);
+    public Vector3 maxPosition = new Vector3(0, 0, 0);
 
     [Header("Smooth")]
-    [SerializeField] private bool enableSmooth = true;
-    [SerializeField] private float smoothSpeed = 3f;
+    public bool enableSmooth = true;
+    public float smoothSpeed = 3f;
     private Vector3 desiredPosition;
 
     private void LateUpdate()

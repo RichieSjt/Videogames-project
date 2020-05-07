@@ -11,20 +11,20 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
 
     [Header("Animator")]
-    [SerializeField] private Animator anim;
+    public Animator anim;
     
     [Header("Movement configuration")]
-    [SerializeField] private float speedX = 10;
-    [SerializeField] private float speedZ = 10;
-    [SerializeField] private float gravity = 0.2f;
-    [SerializeField] private float jumpForce = 8f;
-    [SerializeField] private float maxVelocity = 8f;
+    public float speedX = 10;
+    public float speedZ = 10;
+    public float gravity = 0.2f;
+    public float jumpForce = 8f;
+    public float maxVelocity = 8f;
 
     [Header("Ground Check Raycast")]
-    [SerializeField] private float extremitiesOffset = 0.5f;   
-    [SerializeField] private float innerVerticalOffset = 0.25f;   
-    [SerializeField] private float distanceGrounded = 0.15f;    
-    [SerializeField] private float slopeThereshold = 0.55f;
+    public float extremitiesOffset = 0.5f;   
+    public float innerVerticalOffset = 0.25f;   
+    public float distanceGrounded = 0.15f;    
+    public float slopeThereshold = 0.55f;
 
     [Header("Health")]
     public int maxHealth = 100;
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
             return (slope.y > slopeThereshold) ? true : false;
         }
 
-        //Back Right
+        //B
         if (Physics.Raycast(new Vector3(controller.bounds.center.x + (controller.bounds.extents.x - extremitiesOffset), yRay, controller.bounds.center.z - (controller.bounds.extents.z - extremitiesOffset)), -Vector3.up, out hit, innerVerticalOffset + distanceGrounded))
         {
             slope = hit.normal;
