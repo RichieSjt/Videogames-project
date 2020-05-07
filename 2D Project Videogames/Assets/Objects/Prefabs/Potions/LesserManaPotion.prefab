@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   radius: 0.7
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 8f241174948eae648820e0d50a459bc7, type: 2}
 --- !u!212 &2727097532096122588
 SpriteRenderer:
   m_ObjectHideFlags: 0

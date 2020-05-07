@@ -28,22 +28,27 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health")]
     public int maxHealth = 100;
-    private int currentHealth;
-
     public HealthSystem healthSystem;
     public HealthBar healthBar;
+
+    [Header("Mana")]
+    public int maxMana = 100;
+    public ManaSystem manaSystem;
+    public ManaBar manaBar;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        //Health setup
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
+        healthSystem.health = maxHealth;
         healthBar.Setup(healthSystem);
-    }
-
-    void Start()
-    {
-        currentHealth = maxHealth;
+        //Mana setup
+        manaSystem = GetComponent<ManaSystem>();
+        manaSystem.maxMana = maxMana;
+        manaSystem.mana = maxMana;
+        manaBar.Setup(manaSystem);
     }
 
     private void Update()

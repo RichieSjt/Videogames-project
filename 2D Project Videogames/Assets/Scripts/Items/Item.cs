@@ -12,7 +12,7 @@ public class Item : ScriptableObject
     public virtual void Use()
     {
         //Use the item
-        #warning This method must be overwritten depending on what the picked up object does
+        //This method must be overwritten depending on what the picked up object does
         
         Debug.Log("Using " + name);
     }

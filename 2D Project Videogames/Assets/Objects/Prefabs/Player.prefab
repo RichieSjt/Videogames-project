@@ -67,9 +67,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7752858091402383434}
   - component: {fileID: 7752858091402383436}
+  - component: {fileID: 7752858091402383437}
+  - component: {fileID: 6333747557553576229}
   - component: {fileID: 7752858091402383438}
   - component: {fileID: 7752858091402383439}
-  - component: {fileID: 7752858091402383437}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7752858091402383435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -110,6 +111,42 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.87, z: -0.09}
+--- !u!114 &7752858091402383437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752858091402383435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e029b9e35cc555c469fd99f04c011351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnim: {fileID: 7752858093028244559}
+  hitBox: {fileID: 3062280507158817443}
+  attackDamage: 50
+  attackRate: 2
+  fireBallPrefab: {fileID: 0}
+  magicDamage: 30
+  manaPerAttack: 40
+  magicAttackRate: 1
+--- !u!114 &6333747557553576229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752858091402383435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1f5b7300dbc4b419934a6bf37e881d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mana: 100
+  maxMana: 100
+  recoveryAmount: 5
+  recoveryRate: 2
 --- !u!114 &7752858091402383438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec873ace4d5c13543af427e84ba8958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   maxHealth: 100
 --- !u!114 &7752858091402383439
 MonoBehaviour:
@@ -148,22 +186,9 @@ MonoBehaviour:
   maxHealth: 100
   healthSystem: {fileID: 7752858091402383438}
   healthBar: {fileID: 0}
---- !u!114 &7752858091402383437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7752858091402383435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e029b9e35cc555c469fd99f04c011351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 7752858093028244559}
-  hitBox: {fileID: 3062280507158817443}
-  attackDamage: 50
-  attackRate: 2
+  maxMana: 100
+  manaSystem: {fileID: 6333747557553576229}
+  manaBar: {fileID: 0}
 --- !u!1 &7752858093028244554
 GameObject:
   m_ObjectHideFlags: 0
