@@ -8,10 +8,8 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Animator anim;
 
     [Header("Attack Settings")]
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.8f;
-    [SerializeField] private LayerMask enemyLayers;
-    [SerializeField] private int attackDamage = 40;
+    [SerializeField] private GameObject hitBox;
+    [SerializeField] private int attackDamage = 50;
     [SerializeField] private float attackRate = 2f;
     private float nextAttackTime = 0f;
     
@@ -29,19 +27,12 @@ public class PlayerCombat : MonoBehaviour
     private void Attack()
     {
         anim.SetTrigger("Attack");
+        hitBox.GetComponent<HitBox>().EnableHitBox();
 
-        //Detect enemies in range of attack
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+        Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Enemy");
+        if (hittedEnemy != null)
+            hittedEnemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
 
-        //Damage enemies
-        foreach (Collider enemy in hitEnemies)
-        {
-            enemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        hitBox.GetComponent<HitBox>().DisableHitBox(0.15f);
     }
 }
