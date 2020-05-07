@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : Enemy
+public class SlimeController : Enemy
 {
 
     [Header("Animator")]    
     public Animator anim;
-    public float attackDuration = 0;
-    public float deadDuration = 0;
+    public float attackDuration = 0.3f;
+    public float deadDuration = 1.4f;
 
     [Header("Movement targets")]
     private Transform target;
     private NavMeshAgent agent;
     
     [Header("Movement settings")]
-    public float lookRadius = 0;
-    public float speed = 0;
+    public float lookRadius = 2.5f;
+    public float speed = 1.5f;
+    private Rigidbody slimeRigidbody;
     
     [Header("Health")]
     private HealthSystem healthSystem;
@@ -25,18 +26,19 @@ public class EnemyController : Enemy
 
     [Header("Attack Settings")]
     public GameObject hitBox;
-    public int attackDamage = 50;
-    public float attackRate = 2f;
+    public int attackDamage = 10;
+    public float attackRate = 5f;
     private float nextAttackTime = 0f;
 
-    [Header("Sprite Facing")]
-    public bool isFacingToRight;
+    private float currentTime = 0f;
+
 
     void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         healthSystem = GetComponent<HealthSystem>();
+        slimeRigidbody = GetComponentInChildren<Rigidbody>();
         healthSystem.maxHealth = maxHealth;
         healthSystem.health = maxHealth;
     }
@@ -55,6 +57,12 @@ public class EnemyController : Enemy
             agent.SetDestination(target.position);
             agent.speed = speed;
             anim.SetBool("IsMoving", true);
+
+            //slimeRigidbody.AddForce(Vector3.up * 20f, ForceMode.Impulse);
+            if(Time.time >= currentTime){
+                SoundManager.PlaySound("SlimeMove", 0.1f, 1f);
+                currentTime = Time.time + 1.5f;
+            }
         }
         else if(distanceBetween > lookRadius)
         {
@@ -70,26 +78,14 @@ public class EnemyController : Enemy
             }
         }
 
-        if (isFacingToRight){
-            if(target.position.x > transform.position.x)
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-            }
-            if(target.position.x < transform.position.x)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-            }
-        }
-        else
+    
+        if(target.position.x > transform.position.x)
         {
-            if(target.position.x > transform.position.x)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-            }
-            if(target.position.x < transform.position.x)
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-            }
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        if(target.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
@@ -120,6 +116,8 @@ public class EnemyController : Enemy
     private void Die()
     {
         anim.SetBool("IsDead", true);
+
+        SoundManager.PlaySound("SlimeDie", 0.5f, 1f);
 
         //Disable enemy
         //GetComponent<CapsuleCollider>().enabled = false;

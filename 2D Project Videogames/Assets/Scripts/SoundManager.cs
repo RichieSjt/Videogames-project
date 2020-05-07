@@ -4,37 +4,33 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip shootSound, enemyShoot, bigShootSound, normalHitSound, bigHitSound;
+    public static AudioClip SlimeMove, SlimeDie;
     static AudioSource audio;
 
     void Start(){
-        shootSound = Resources.Load<AudioClip>("normalShoot");
+        SlimeMove = Resources.Load<AudioClip>("SlimeMove");
+        SlimeDie = Resources.Load<AudioClip>("SlimeDie");
+        
+        /*shootSound = Resources.Load<AudioClip>("normalShoot");
         bigShootSound = Resources.Load<AudioClip>("bigShoot");
         enemyShoot = Resources.Load<AudioClip>("enemyShoot");
         normalHitSound = Resources.Load<AudioClip>("normalHit");
-        bigHitSound = Resources.Load<AudioClip>("bigHit");
+        bigHitSound = Resources.Load<AudioClip>("bigHit");*/
 
         audio = GetComponent<AudioSource>();
     }   
 
-    public static void PlaySound(string clip){
+    public static void PlaySound(string clip, float volume, float pitch){
         //To play a sound from another script just do this
         //SoundManagerScript.PlaySound("soundName");
         switch(clip){
-            case "normalShoot":
-                audio.PlayOneShot(shootSound);
+            case "SlimeMove":
+                audio.PlayOneShot(SlimeMove);
+                audio.volume = volume;
                 break;
-            case "bigShoot":
-                audio.PlayOneShot(bigShootSound);
-                break;
-            case "enemyShoot":
-                audio.PlayOneShot(enemyShoot);
-                break;
-            case "normalHit":
-                audio.PlayOneShot(normalHitSound);
-                break;
-            case "bigHit":
-                audio.PlayOneShot(bigHitSound);
+            case "SlimeDie":
+                audio.PlayOneShot(SlimeDie);
+                audio.volume = volume;
                 break;
         }
     }

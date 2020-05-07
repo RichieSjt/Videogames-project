@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
 
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Enemy");
         if (hittedEnemy != null)
-            hittedEnemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
+            hittedEnemy.GetComponent<Enemy>().TakeDamage(attackDamage);
 
         hitBox.GetComponent<HitBox>().DisableHitBox(0.15f);
     }

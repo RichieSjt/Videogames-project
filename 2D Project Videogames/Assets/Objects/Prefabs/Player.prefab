@@ -145,8 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mana: 100
   maxMana: 100
-  recoveryAmount: 5
-  recoveryRate: 2
+  recoveryAmount: 3
+  recoveryRate: 6
 --- !u!114 &7752858091402383438
 MonoBehaviour:
   m_ObjectHideFlags: 0
