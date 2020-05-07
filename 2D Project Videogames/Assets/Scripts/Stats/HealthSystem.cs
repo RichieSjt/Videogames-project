@@ -2,7 +2,7 @@
 using System;
 
 public class HealthSystem : MonoBehaviour{
-    public int health;
+    private int health;
     public int maxHealth;
     public event EventHandler OnHealthChanged;
 

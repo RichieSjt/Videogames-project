@@ -7,27 +7,28 @@ public class EnemyController : MonoBehaviour
 {
 
     [Header("Animator")]    
-    [SerializeField] private Animator anim;
+    public Animator anim;
 
     [Header("Movement targets")]
-    [SerializeField] private Transform target;
-    [SerializeField] private NavMeshAgent agent;
-
+    private Transform target;
+    private NavMeshAgent agent;
+    
     [Header("Movement settings")]
-    [SerializeField] public float lookRadius = 4f;
-
+    public float lookRadius = 0;
+    
     [Header("Health")]
-    [SerializeField] public int maxHealth = 100;
+    private HealthSystem healthSystem;
+    public int maxHealth = 100;
 
     [Header("Attack Settings")]
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRange = 0.5f;
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private int attackDamage = 40;
-    [SerializeField] private float attackRate = 2f;
+    public GameObject hitBox;
+    public float attackTime = 0;
+    public int attackDamage = 50;
+    public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
-    public HealthSystem healthSystem;
+    [Header("Sprite Facing")]
+    public bool isFacingToRight;
 
     void Start()
     {
@@ -38,6 +39,11 @@ public class EnemyController : MonoBehaviour
     }
 
     void Update()
+    {
+        EnemyAIController();
+    }
+
+    private void EnemyAIController()
     {
         float distanceBetween = Vector3.Distance(target.position, transform.position);
         
@@ -50,7 +56,6 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetBool("IsMoving", false);
         }
-
         if(distanceBetween <= 0.8f)
         {
             if (Time.time >= nextAttackTime)
@@ -60,30 +65,39 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-
-
-        if(target.position.x > transform.position.x)
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+        if (isFacingToRight){
+            if(target.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            if(target.position.x < transform.position.x)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
         }
-        if(target.position.x < transform.position.x)
+        else
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            if(target.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            if(target.position.x < transform.position.x)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
         }
     }
 
     private void Attack()
     {
         anim.SetTrigger("Attack");
+        hitBox.GetComponent<HitBox>().EnableHitBox();
 
-        //Detect player in range of attack
-        Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, playerLayer);
+        Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
+        if (hittedEnemy != null)
+            hittedEnemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
 
-        //Damage player
-        foreach (Collider player in hitPlayer)
-        {
-            player.GetComponent<PlayerController>().TakeDamage(attackDamage);
-        }
+        hitBox.GetComponent<HitBox>().DisableHitBox(attackTime);
     }
 
     public void TakeDamage(int damage)
@@ -108,7 +122,6 @@ public class EnemyController : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected() {
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
