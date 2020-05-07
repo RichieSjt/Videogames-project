@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
 
     [Header("Animator")]    
     public Animator anim;
+    public float attackDuration = 0;
+    public float deadDuration = 0;
 
     [Header("Movement targets")]
     private Transform target;
@@ -22,7 +24,6 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attack Settings")]
     public GameObject hitBox;
-    public float attackTime = 0;
     public int attackDamage = 50;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
@@ -95,9 +96,9 @@ public class EnemyController : MonoBehaviour
 
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
-            hittedEnemy.GetComponent<EnemyController>().TakeDamage(attackDamage);
+            hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
 
-        hitBox.GetComponent<HitBox>().DisableHitBox(attackTime);
+        hitBox.GetComponent<HitBox>().DisableHitBox(attackDuration);
     }
 
     public void TakeDamage(int damage)
@@ -117,8 +118,15 @@ public class EnemyController : MonoBehaviour
         anim.SetBool("IsDead", true);
 
         //Disable enemy
-        GetComponent<CapsuleCollider>().enabled = false;
+        //GetComponent<CapsuleCollider>().enabled = false;
         this.enabled = false;
+        StartCoroutine(DestroyAfterTime(deadDuration));
+    }
+
+    IEnumerator DestroyAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

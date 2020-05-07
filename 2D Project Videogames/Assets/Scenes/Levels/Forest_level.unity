@@ -1420,6 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603403507}
   - component: {fileID: 603403509}
+  - component: {fileID: 603403512}
   - component: {fileID: 603403511}
   - component: {fileID: 603403510}
   - component: {fileID: 603403508}
@@ -1517,6 +1518,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!136 &603403512
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603403506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!224 &612058617 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3910352700089013551, guid: d0e5b08ba33c7e44985a9b6992f56032,
@@ -6188,7 +6203,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4, z: 0.1}
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
   m_Center: {x: -0.18, y: -0.12, z: 0}
 --- !u!114 &1350752385
 MonoBehaviour:
@@ -9784,7 +9799,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.7
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -9822,12 +9837,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 127267368}
+  attackDuration: 0.3
+  deadDuration: 1.4
   lookRadius: 2.5
   maxHealth: 100
   hitBox: {fileID: 1350752382}
-  attackTime: 0.3
-  attackDamage: 50
-  attackRate: 2
+  attackDamage: 10
+  attackRate: 5
   isFacingToRight: 0
 --- !u!4 &998228129955142287 stripped
 Transform:
@@ -9997,7 +10013,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4, z: 0.1}
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
   m_Center: {x: -0.45, y: 0.3, z: -0.5}
 --- !u!1001 &5639132895266368190
 PrefabInstance:
