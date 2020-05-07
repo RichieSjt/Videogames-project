@@ -60,6 +60,8 @@ public class PlayerCombat : MonoBehaviour
         playerAnim.SetTrigger("Attack");
         ManaSystem playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
         playerMS.ReduceMana(manaPerAttack);
-        Vector3 shootDirection = (firepoint.position - firepointEnd).normalized;
+        Vector3 shootDirection = (firepoint.position - firepointEnd.position).normalized;
+        GameObject fireball = Instantiate(fireBallPrefab, firepoint.position, Quaternion.identity);
+        fireball.GetComponent<FireBall>().Setup(shootDirection);
     }
 }
