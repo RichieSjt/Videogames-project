@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : Enemy
+public class SkeletonController : Enemy
 {
 
     [Header("Animator")]    

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 4817661155413844307}
   attackDuration: 0.5
-  deadDuration: 0.5
+  deadDuration: 1
   lookRadius: 4
   speed: 2.5
   maxHealth: 100

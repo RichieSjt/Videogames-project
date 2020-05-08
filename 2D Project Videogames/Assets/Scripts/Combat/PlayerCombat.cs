@@ -64,7 +64,6 @@ public class PlayerCombat : MonoBehaviour
             playerAnim.SetTrigger("Attack");
             playerMS.ReduceMana(manaPerAttack);
             Vector3 shootDirection = (firepointEnd.position - firepoint.position).normalized;
-            Debug.Log(shootDirection);
             
             var rotationVector = transform.rotation.eulerAngles;
 
