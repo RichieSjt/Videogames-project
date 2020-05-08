@@ -159,7 +159,8 @@ MonoBehaviour:
   hitBox: {fileID: 3062280507158817443}
   attackDamage: 50
   attackRate: 2
-  fireBallPrefab: {fileID: 0}
+  fireBallPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
+    type: 3}
   magicDamage: 30
   manaPerAttack: 40
   magicAttackRate: 1

@@ -61,8 +61,10 @@ public class SkeletonController : Enemy
             anim.SetBool("IsMoving", false);
             agent.speed = 0;
         }
-        if(distanceBetween <= 0.8f)
+        if(distanceBetween <= agent.stoppingDistance)
         {
+            agent.speed = 0;
+
             if (Time.time >= nextAttackTime)
             {
                 Attack();
@@ -70,26 +72,13 @@ public class SkeletonController : Enemy
             }
         }
 
-        if (isFacingToRight){
-            if(target.position.x > transform.position.x)
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-            }
-            if(target.position.x < transform.position.x)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-            }
-        }
-        else
+        if(target.position.x > transform.position.x)
         {
-            if(target.position.x > transform.position.x)
-            {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-            }
-            if(target.position.x < transform.position.x)
-            {
-                transform.localScale = new Vector3(1f, 1f, 1f);
-            }
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        if(target.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
 

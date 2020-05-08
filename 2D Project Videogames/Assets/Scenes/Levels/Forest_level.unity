@@ -11152,12 +11152,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa785ceda684a744ab41fb95c4878828, type: 3}
---- !u!1 &1816393111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5885017714422434211, guid: 055cf1e44d9606446a90ff09745d006a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5885017713088467421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1833786957
 Mesh:
   m_ObjectHideFlags: 0
@@ -14221,15 +14215,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983048943}
     m_Modifications:
-    - target: {fileID: 5639132896451657876, guid: aa785ceda684a744ab41fb95c4878828,
+    - target: {fileID: 5639132896451657879, guid: aa785ceda684a744ab41fb95c4878828,
         type: 3}
-      propertyPath: hitBox
-      value: 
-      objectReference: {fileID: 1816393111}
-    - target: {fileID: 5639132896451657876, guid: aa785ceda684a744ab41fb95c4878828,
+      propertyPath: m_StoppingDistance
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639132896451657879, guid: aa785ceda684a744ab41fb95c4878828,
         type: 3}
-      propertyPath: attackDuration
-      value: 0.5
+      propertyPath: m_AutoBraking
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5639132896451657880, guid: aa785ceda684a744ab41fb95c4878828,
         type: 3}
@@ -14429,12 +14423,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7752858091402383437, guid: aad46d0c84526654cb68fd6d2dd95bcb,
-        type: 3}
-      propertyPath: fireBallPrefab
-      value: 
-      objectReference: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
-        type: 3}
     - target: {fileID: 7752858091402383439, guid: aad46d0c84526654cb68fd6d2dd95bcb,
         type: 3}
       propertyPath: healthBar
