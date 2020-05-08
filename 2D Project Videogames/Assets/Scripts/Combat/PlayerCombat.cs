@@ -57,11 +57,24 @@ public class PlayerCombat : MonoBehaviour
 
     private void MagicAttack()
     {
-        playerAnim.SetTrigger("Attack");
         ManaSystem playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
-        playerMS.ReduceMana(manaPerAttack);
-        Vector3 shootDirection = (firepoint.position - firepointEnd.position).normalized;
-        GameObject fireball = Instantiate(fireBallPrefab, firepoint.position, Quaternion.identity);
-        fireball.GetComponent<FireBall>().Setup(shootDirection);
+
+        if(playerMS.mana >= manaPerAttack)
+        {  
+            playerAnim.SetTrigger("Attack");
+            playerMS.ReduceMana(manaPerAttack);
+            Vector3 shootDirection = (firepointEnd.position - firepoint.position).normalized;
+            Debug.Log(shootDirection);
+            
+            var rotationVector = transform.rotation.eulerAngles;
+
+            if(shootDirection.x > 0)
+                rotationVector.z = 90;
+            else
+                rotationVector.z = -90;
+            
+            GameObject fireball = Instantiate(fireBallPrefab, firepoint.position, Quaternion.Euler(rotationVector));
+            fireball.GetComponent<FireBall>().Setup(shootDirection);
+        }
     }
 }
