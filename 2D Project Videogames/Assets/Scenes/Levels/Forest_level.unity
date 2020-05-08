@@ -2928,6 +2928,7 @@ GameObject:
   - component: {fileID: 741644641}
   - component: {fileID: 741644643}
   - component: {fileID: 741644644}
+  - component: {fileID: 741644645}
   m_Layer: 0
   m_Name: DemonBoss
   m_TagString: Enemy
@@ -2996,7 +2997,19 @@ MonoBehaviour:
   hitBox: {fileID: 1814085768}
   attackDamage: 80
   attackRate: 10
-  lookRadius: 3
+--- !u!65 &741644645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741644640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.86, y: 1, z: 3.83}
+  m_Center: {x: -1.43, y: -1.61, z: -0.86}
 --- !u!43 &751318938
 Mesh:
   m_ObjectHideFlags: 0

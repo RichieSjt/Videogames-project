@@ -17,20 +17,27 @@ public class DemonBossController : MonoBehaviour
     public int attackDamage = 10;
     public float attackRate = 5f;
     private float nextAttackTime = 0f;
-    public float lookRadius = 5f;
 
     private float currentTime = 0f;
 
 
-    void Start()
+    private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
         healthSystem.health = maxHealth;
     }
 
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+    private void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player") 
+        {
+            Debug.Log("ENTER PLAYER");
+        }
     }
 }
