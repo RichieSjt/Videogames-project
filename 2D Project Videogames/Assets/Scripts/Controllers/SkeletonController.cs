@@ -68,7 +68,7 @@ public class SkeletonController : Enemy
             if (Time.time >= nextAttackTime)
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = Time.time + attackRate;
             }
         }
 

@@ -312,4 +312,4 @@ MonoBehaviour:
   maxHealth: 100
   hitBox: {fileID: 5885017714422434211}
   attackDamage: 10
-  attackRate: 5
+  attackRate: 2

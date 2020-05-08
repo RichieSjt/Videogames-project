@@ -163,7 +163,7 @@ MonoBehaviour:
     type: 3}
   magicDamage: 30
   manaPerAttack: 40
-  magicAttackRate: 1
+  magicAttackRate: 4
   firepoint: {fileID: 640158034450124516}
   firepointEnd: {fileID: 8394328283607332579}
 --- !u!114 &6333747557553576229

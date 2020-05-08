@@ -30,7 +30,7 @@ public class SlimeController : Enemy
     public float attackRate = 5f;
     private float nextAttackTime = 0f;
 
-    private float currentTime = 0f;
+    private float timeLoopSound = 0f;
 
 
     void Start()
@@ -59,9 +59,9 @@ public class SlimeController : Enemy
             anim.SetBool("IsMoving", true);
 
             //slimeRigidbody.AddForce(Vector3.up * 20f, ForceMode.Impulse);
-            if(Time.time >= currentTime){
+            if(Time.time >= timeLoopSound){
                 SoundManager.PlaySound("SlimeMove", 0.1f, 1f);
-                currentTime = Time.time + 1.5f;
+                timeLoopSound = Time.time + 1.5f;
             }
         }
         else if(distanceBetween > lookRadius)
@@ -74,7 +74,7 @@ public class SlimeController : Enemy
             if (Time.time >= nextAttackTime)
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = Time.time + attackRate;
             }
         }
 
@@ -104,7 +104,7 @@ public class SlimeController : Enemy
     public override void TakeDamage(int damage)
     {
         healthSystem.TakeDamage(damage);
-        //Debug.Log("Enemy health: "+currentHealth);
+        //Debug.Log("Slime health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
         if(healthSystem.GetHealth() <= 0)

@@ -5996,11 +5996,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 24871192}
-  attackDuration: 0.3
+  attackDuration: 1.4
+  deadDuration: 0
+  spriteRenderer: {fileID: 24871191}
   maxHealth: 300
   hitBox: {fileID: 1814085768}
-  attackDamage: 80
-  attackRate: 10
+  attackDamage: 20
+  attackRate: 4
+  enemies: []
 --- !u!65 &741644645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23906,16 +23909,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983048943}
     m_Modifications:
-    - target: {fileID: 5639132896451657879, guid: aa785ceda684a744ab41fb95c4878828,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639132896451657879, guid: aa785ceda684a744ab41fb95c4878828,
-        type: 3}
-      propertyPath: m_AutoBraking
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5639132896451657880, guid: aa785ceda684a744ab41fb95c4878828,
         type: 3}
       propertyPath: m_LocalPosition.x

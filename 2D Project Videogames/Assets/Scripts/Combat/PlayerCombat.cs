@@ -18,6 +18,7 @@ public class PlayerCombat : MonoBehaviour
     public int magicDamage = 30;
     public int manaPerAttack = 40;
     public float magicAttackRate = 1f;
+    private float nextMagicTime = 0f;
 
     [Header("Fire points")]
     public Transform firepoint;
@@ -33,12 +34,12 @@ public class PlayerCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-        if (Time.time >= nextAttackTime)
+        if (Time.time >= nextMagicTime)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 MagicAttack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextMagicTime = Time.time + 1f / magicAttackRate;
             }
         }
     }
