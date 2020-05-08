@@ -73,6 +73,7 @@ public class PlayerCombat : MonoBehaviour
                 rotationVector.z = -90;
             
             GameObject fireball = Instantiate(fireBallPrefab, firepoint.position, Quaternion.Euler(rotationVector));
+            fireball.GetComponent<FireBall>().SetMagicDamage(magicDamage);
             fireball.GetComponent<FireBall>().Setup(shootDirection);
         }
     }
