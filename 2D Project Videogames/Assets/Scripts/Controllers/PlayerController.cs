@@ -113,6 +113,15 @@ public class PlayerController : MonoBehaviour
         return right * moveVector.x + forward * moveVector.z;
     }
 
+    private void CheckLava()
+    {
+        if (Physics.Raycast(transform.position, -Vector3.up, 1f, 12))
+        {
+            transform.position = new Vector3(67.77f, 5.8f, 0);
+        }
+
+    }
+
     private bool Grounded()
     {
         if (verticalVelocity>0)
