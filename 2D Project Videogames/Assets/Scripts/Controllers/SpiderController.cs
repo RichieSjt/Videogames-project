@@ -93,6 +93,7 @@ public class SpiderController : Enemy
     {
         anim.SetTrigger("Attack");
         hitBox.GetComponent<HitBox>().EnableHitBox();
+        SoundManager.PlaySound("SpiderAttack", 1f);
 
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)

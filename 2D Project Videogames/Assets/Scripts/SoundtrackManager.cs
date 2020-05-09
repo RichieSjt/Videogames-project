@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundtrackManager : MonoBehaviour
 {
     public static AudioClip forest, castle, bossBattle;
-    static AudioSource audio;
+    private AudioSource soundtrackAudio;
 
     [Header("Scenes positions")]
     public float forestStart;
@@ -13,32 +13,34 @@ public class SoundtrackManager : MonoBehaviour
     public float bossStart1;
 
     void Start(){
-        forest = Resources.Load<AudioClip>("SlimeMove");
-        castle = Resources.Load<AudioClip>("SlimeDie");
-        bossBattle = Resources.Load<AudioClip>("FireBall");
-        audio = GetComponent<AudioSource>();
+        forest = Resources.Load<AudioClip>("Forest");
+        castle = Resources.Load<AudioClip>("Castle");
+        bossBattle = Resources.Load<AudioClip>("BossBattle");
+        soundtrackAudio = GetComponent<AudioSource>();
     }
 
     private void Update() {
-        if (transform.position.x == forestStart)
+        float camPosX = transform.position.x;
+        if (camPosX == forestStart)
         {
-            audio.Pause();
-            audio.clip = forest;
-            audio.Play();
+            //soundtrackAudio.Pause();
+            soundtrackAudio.clip = castle;
+            soundtrackAudio.Play();
+            
         }
 
-        if (transform.position.x == castleStart)
+        /*if (camPosX == castleStart)
         {
-            audio.Pause();
-            audio.clip = castle;
-            audio.Play();
+            soundtrackAudio.Pause();
+            soundtrackAudio.clip = castle;
+            soundtrackAudio.Play();
         }
              
-        if (transform.position.x == bossStart1)
+        if (camPosX == bossStart1)
         {
-            audio.Pause();
-            audio.clip = bossBattle;
-            audio.Play();
-        }
+            soundtrackAudio.Pause();
+            soundtrackAudio.clip = bossBattle;
+            soundtrackAudio.Play();
+        }*/
     }
 }

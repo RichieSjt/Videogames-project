@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip SlimeMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire;
+    public static AudioClip SlimeMove,SpiderAttack,SpiderDie,SpiderHurt,SpiderMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire;
     static AudioSource audio;
 
     void Start(){
@@ -18,8 +18,10 @@ public class SoundManager : MonoBehaviour
         SkeletonHurt = Resources.Load<AudioClip>("SkeletonHurt");
         PlayerHurt = Resources.Load<AudioClip>("PlayerHurt");
         BossFire = Resources.Load<AudioClip>("BossFire");
-        BossFire = Resources.Load<AudioClip>("BossFire");
-        BossFire = Resources.Load<AudioClip>("BossFire");
+        SpiderMove = Resources.Load<AudioClip>("SpiderMove");
+        SpiderAttack = Resources.Load<AudioClip>("SpiderAttack");
+        SpiderDie = Resources.Load<AudioClip>("SpiderDie");
+        SpiderHurt = Resources.Load<AudioClip>("SpiderHurt");
         
 
         audio = GetComponent<AudioSource>();
@@ -63,6 +65,22 @@ public class SoundManager : MonoBehaviour
                 break;
             case "BossFire":
                 audio.PlayOneShot(BossFire);
+                audio.volume = volume;
+                break;
+            case "SpiderMove":
+                audio.PlayOneShot(SpiderMove);
+                audio.volume = volume;
+                break;
+            case "SpiderAttack":
+                audio.PlayOneShot(SpiderAttack);
+                audio.volume = volume;
+                break;
+            case "SpiderDie":
+                audio.PlayOneShot(SpiderDie);
+                audio.volume = volume;
+                break;
+            case "SpiderHurt":
+                audio.PlayOneShot(SpiderHurt);
                 audio.volume = volume;
                 break;
 

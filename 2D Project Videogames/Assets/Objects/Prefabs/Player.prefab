@@ -212,7 +212,7 @@ MonoBehaviour:
   speedX: 10
   speedZ: 10
   gravity: 0.2
-  jumpForce: 8
+  jumpForce: 7.5
   maxVelocity: 8
   extremitiesOffset: 0.5
   innerVerticalOffset: 0.25
