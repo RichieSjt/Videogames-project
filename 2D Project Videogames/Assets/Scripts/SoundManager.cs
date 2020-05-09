@@ -18,6 +18,9 @@ public class SoundManager : MonoBehaviour
         SkeletonHurt = Resources.Load<AudioClip>("SkeletonHurt");
         PlayerHurt = Resources.Load<AudioClip>("PlayerHurt");
         BossFire = Resources.Load<AudioClip>("BossFire");
+        BossFire = Resources.Load<AudioClip>("BossFire");
+        BossFire = Resources.Load<AudioClip>("BossFire");
+        
 
         audio = GetComponent<AudioSource>();
     }   

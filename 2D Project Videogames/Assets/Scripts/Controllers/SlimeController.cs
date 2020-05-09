@@ -16,7 +16,7 @@ public class SlimeController : Enemy
     private NavMeshAgent agent;
     
     [Header("Movement settings")]
-    public float lookRadius = 2.5f;
+    public float lookRadius = 3f;
     public float speed = 1.5f;
     private Rigidbody slimeRigidbody;
     

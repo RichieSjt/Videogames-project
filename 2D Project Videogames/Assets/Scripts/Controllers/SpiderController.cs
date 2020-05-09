@@ -16,13 +16,13 @@ public class SpiderController : Enemy
     private NavMeshAgent agent;
     
     [Header("Movement settings")]
-    public float lookRadius = 2.5f;
-    public float speed = 1.5f;
-    private Rigidbody slimeRigidbody;
+    public float lookRadius = 5f;
+    public float speed = 4.5f;
+    private Rigidbody spiderRigidbody;
     
     [Header("Health")]
     private HealthSystem healthSystem;
-    public int maxHealth = 100;
+    public int maxHealth = 50;
 
     [Header("Attack Settings")]
     public GameObject hitBox;
@@ -38,7 +38,7 @@ public class SpiderController : Enemy
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         healthSystem = GetComponent<HealthSystem>();
-        slimeRigidbody = GetComponentInChildren<Rigidbody>();
+        spiderRigidbody = GetComponentInChildren<Rigidbody>();
         healthSystem.maxHealth = maxHealth;
         healthSystem.health = maxHealth;
     }
@@ -58,9 +58,9 @@ public class SpiderController : Enemy
             agent.speed = speed;
             anim.SetBool("IsMoving", true);
 
-            //slimeRigidbody.AddForce(Vector3.up * 20f, ForceMode.Impulse);
+            //spiderRigidbody.AddForce(Vector3.up * 20f, ForceMode.Impulse);
             if(Time.time >= timeLoopSound){
-                SoundManager.PlaySound("SlimeMove", 1f);
+                SoundManager.PlaySound("SpiderMove", 1f);
                 timeLoopSound = Time.time + 1.5f;
             }
         }
@@ -104,8 +104,9 @@ public class SpiderController : Enemy
     public override void TakeDamage(int damage)
     {
         healthSystem.TakeDamage(damage);
-        //Debug.Log("Slime health: "+currentHealth);
+        //Debug.Log("Spider health: "+currentHealth);
         anim.SetTrigger("Hurt");
+        SoundManager.PlaySound("SpiderHurt", 1f);
 
         if(healthSystem.GetHealth() <= 0)
         {
@@ -117,7 +118,7 @@ public class SpiderController : Enemy
     {
         anim.SetBool("IsDead", true);
 
-        SoundManager.PlaySound("SlimeDie", 1f);
+        SoundManager.PlaySound("SpiderDie", 1f);
 
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
