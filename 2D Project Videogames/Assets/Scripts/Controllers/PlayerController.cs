@@ -167,6 +167,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Player health: "+ healthSystem.GetHealth());
         anim.SetTrigger("Hurt");
+        SoundManager.PlaySound("PlayerHurt", 1f);
 
         if(healthSystem.GetHealth() <= 0)
         {

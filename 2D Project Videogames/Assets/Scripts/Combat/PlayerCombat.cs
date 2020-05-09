@@ -47,6 +47,8 @@ public class PlayerCombat : MonoBehaviour
     private void Attack()
     {
         playerAnim.SetTrigger("Attack");
+        SoundManager.PlaySound("SwordSlashPlayer", 1f);
+
         hitBox.GetComponent<HitBox>().EnableHitBox();
 
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Enemy");
@@ -65,6 +67,7 @@ public class PlayerCombat : MonoBehaviour
             playerAnim.SetTrigger("Attack");
             playerMS.ReduceMana(manaPerAttack);
             Vector3 shootDirection = (firepointEnd.position - firepoint.position).normalized;
+            SoundManager.PlaySound("FireBall", 1f);
             
             var rotationVector = transform.rotation.eulerAngles;
 

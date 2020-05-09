@@ -4,35 +4,58 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip SlimeMove, SlimeDie;
+    public static AudioClip SlimeMove, SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt;
     static AudioSource audio;
 
     void Start(){
+
         SlimeMove = Resources.Load<AudioClip>("SlimeMove");
         SlimeDie = Resources.Load<AudioClip>("SlimeDie");
-        
-        /*shootSound = Resources.Load<AudioClip>("normalShoot");
-        bigShootSound = Resources.Load<AudioClip>("bigShoot");
-        enemyShoot = Resources.Load<AudioClip>("enemyShoot");
-        normalHitSound = Resources.Load<AudioClip>("normalHit");
-        bigHitSound = Resources.Load<AudioClip>("bigHit");*/
+        FireBall = Resources.Load<AudioClip>("FireBall");
+        SwordSlashPlayer = Resources.Load<AudioClip>("SwordSlashPlayer");
+        SwordSlashSkeleton = Resources.Load<AudioClip>("SwordSlashSkeleton");
+        SkeletonDie = Resources.Load<AudioClip>("SkeletonDie");
+        SkeletonHurt = Resources.Load<AudioClip>("SkeletonHurt");
+        PlayerHurt = Resources.Load<AudioClip>("PlayerHurt");
 
         audio = GetComponent<AudioSource>();
     }   
 
-    public static void PlaySound(string clip, float volume, float pitch){
+    public static void PlaySound(string clip, float volume){
         //To play a sound from another script just do this
-        //SoundManagerScript.PlaySound("soundName");
+        //SoundManager.PlaySound("soundName");
         switch(clip){
             case "SlimeMove":
                 audio.PlayOneShot(SlimeMove);
                 audio.volume = volume;
-                audio.pitch = pitch;
                 break;
             case "SlimeDie":
                 audio.PlayOneShot(SlimeDie);
                 audio.volume = volume;
-                audio.pitch = pitch;
+                break;
+            case "FireBall":
+                audio.PlayOneShot(FireBall);
+                audio.volume = volume;
+                break;
+            case "SwordSlashPlayer":
+                audio.PlayOneShot(SwordSlashPlayer);
+                audio.volume = volume;
+                break;
+            case "SwordSlashSkeleton":
+                audio.PlayOneShot(SwordSlashSkeleton);
+                audio.volume = volume;
+                break;
+            case "SkeletonDie":
+                audio.PlayOneShot(SkeletonDie);
+                audio.volume = volume;
+                break;
+            case "SkeletonHurt":
+                audio.PlayOneShot(SkeletonHurt);
+                audio.volume = volume;
+                break;
+            case "PlayerHurt":
+                audio.PlayOneShot(PlayerHurt);
+                audio.volume = volume;
                 break;
         }
     }

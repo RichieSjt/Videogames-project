@@ -86,6 +86,7 @@ public class SkeletonController : Enemy
     {
         anim.SetTrigger("Attack");
         hitBox.GetComponent<HitBox>().EnableHitBox();
+        SoundManager.PlaySound("SwordSlashSkeleton", 1f);
 
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
@@ -99,6 +100,7 @@ public class SkeletonController : Enemy
         healthSystem.TakeDamage(damage);
         //Debug.Log("Enemy health: "+currentHealth);
         anim.SetTrigger("Hurt");
+        SoundManager.PlaySound("SkeletonHurt", 1f);
 
         if(healthSystem.GetHealth() <= 0)
         {
@@ -109,9 +111,9 @@ public class SkeletonController : Enemy
     private void Die()
     {
         anim.SetBool("IsDead", true);
-
+        SoundManager.PlaySound("SkeletonDie", 1f);
         //Disable enemy
-        //GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
         this.enabled = false;
         StartCoroutine(DestroyAfterTime(deadDuration));
     }
