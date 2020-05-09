@@ -49,11 +49,9 @@ public class DemonBossController : Enemy
     private void Attack()
     {
         anim.SetTrigger("Attack");
-        hitBox.GetComponent<HitBox>().EnableHitBox();
+        StartCoroutine(FireSoundDelay(1f));
 
-        Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
-        if (hittedEnemy != null)
-            hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
+        hitBox.GetComponent<HitBox>().EnableHitBox();
 
         hitBox.GetComponent<HitBox>().DisableHitBox(attackDuration);
     }
@@ -82,6 +80,15 @@ public class DemonBossController : Enemy
     {
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
+    }
+
+    IEnumerator FireSoundDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SoundManager.PlaySound("BossFire", 1f);
+        Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
+        if (hittedEnemy != null)
+            hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
     }
 
     private void OnTriggerEnter(Collider other)

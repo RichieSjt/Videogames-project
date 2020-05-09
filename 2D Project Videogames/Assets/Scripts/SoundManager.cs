@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip SlimeMove, SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt;
+    public static AudioClip SlimeMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire;
     static AudioSource audio;
 
     void Start(){
@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
         SkeletonDie = Resources.Load<AudioClip>("SkeletonDie");
         SkeletonHurt = Resources.Load<AudioClip>("SkeletonHurt");
         PlayerHurt = Resources.Load<AudioClip>("PlayerHurt");
+        BossFire = Resources.Load<AudioClip>("BossFire");
 
         audio = GetComponent<AudioSource>();
     }   
@@ -57,6 +58,12 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(PlayerHurt);
                 audio.volume = volume;
                 break;
+            case "BossFire":
+                audio.PlayOneShot(BossFire);
+                audio.volume = volume;
+                break;
+
+            
         }
     }
 }

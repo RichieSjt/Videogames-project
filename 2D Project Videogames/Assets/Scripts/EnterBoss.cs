@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EnterBoss : MonoBehaviour
 {
-    public void onCollisionEnter(Collision Collision)
+    public void onCollisionEnter(Collision collision)
     {
+         if(collision.gameObject.tag=="Player"){ 
+             EnterBossScene();
+        }
         
     }
     public void EnterBossScene()
