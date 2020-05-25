@@ -19,7 +19,7 @@ TagManager:
   - WallCollider
   - Environment
   - Glow
-  - 
+  - IgnoreShadows
   - 
   - 
   - 
