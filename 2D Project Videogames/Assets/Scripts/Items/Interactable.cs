@@ -13,29 +13,25 @@ public class Interactable : MonoBehaviour
         player = PlayerManager.instance.player.transform;
     }
 
-    public void Update()
-    {
-        if(!hasInteracted)
-        {
-            float distanceBetween = Vector3.Distance(player.position, transform.position);
-            if(distanceBetween <= radius)
-            {
-                Debug.Log("Interact");
-                Interact();
-                hasInteracted = true;
-            }
-        }
-    }
-
     public virtual void Interact()
     {
         //This method is meant to be overwritten
     }
-
-    private void OnDrawGizmosSelected()
+    
+    /*private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }*/
+
+    private void OnTriggerEnter(Collider other) {
+        if(!hasInteracted)
+        {
+            Debug.Log("Interact");
+            Interact();
+            hasInteracted = true;
+            
+        }
     }
 
 }
