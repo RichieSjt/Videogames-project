@@ -10,7 +10,7 @@ public class CheckpointController : MonoBehaviour
     private void Update()
     {
         if(checkedpoint)
-            this.enabled = false;
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
