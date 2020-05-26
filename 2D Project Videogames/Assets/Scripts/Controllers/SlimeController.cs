@@ -23,6 +23,7 @@ public class SlimeController : Enemy
     [Header("Health")]
     private HealthSystem healthSystem;
     public int maxHealth = 100;
+    public GameObject floatingTextPrefab;
 
     [Header("Attack Settings")]
     public GameObject hitBox;
@@ -107,10 +108,17 @@ public class SlimeController : Enemy
         //Debug.Log("Slime health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
+        ShowFloatingText(damage);
+
         if(healthSystem.GetHealth() <= 0)
         {
             Die();
         }
+    }
+    private void ShowFloatingText(int damage)
+    {
+        var go=Instantiate(floatingTextPrefab,transform.position,Quaternion.identity,transform);
+        go.GetComponent<TextMesh>().text=damage.ToString();
     }
 
     private void Die()
