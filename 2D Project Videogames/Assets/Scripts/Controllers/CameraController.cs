@@ -11,17 +11,29 @@ public class CameraController : MonoBehaviour
     public Vector3 offset = new Vector3(0, 10, -10);
     public Vector3 minPosition = new Vector3(0, 0, 0);
     public Vector3 maxPosition = new Vector3(0, 0, 0);
+    private float defaultMaxX, defaultMaxY, defaultMaxZ;
+    private float minX, minY, minZ, maxX, maxY, maxZ;
 
     [Header("Smooth")]
     public bool enableSmooth = true;
     public float smoothSpeed = 3f;
     private Vector3 desiredPosition;
 
+    private void Start()
+    {
+        minX = minPosition.x;
+        minY = minPosition.y;
+        minZ = minPosition.z;
+        maxX = maxPosition.x;
+        maxY = maxPosition.y;
+        maxZ = maxPosition.z;
+    }
+
     private void LateUpdate()
     {
-        float x = Mathf.Clamp(follow.position.x, minPosition.x, maxPosition.x);
-        float y = Mathf.Clamp(follow.position.y, minPosition.y, maxPosition.y);
-        float z = Mathf.Clamp(follow.position.z, minPosition.z, maxPosition.z);
+        float x = Mathf.Clamp(follow.position.x, minX, maxX);
+        float y = Mathf.Clamp(follow.position.y, minY, maxY);
+        float z = Mathf.Clamp(follow.position.z, minZ, maxZ);
 
         desiredPosition = new Vector3(x,y,z) + offset;
 
@@ -29,6 +41,20 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * smoothSpeed);
         else
             transform.position = desiredPosition;
+    }
+
+    public void SetBoundariesX(float minX, float maxX)
+    {
+        Debug.Log("CHANGED "+minX+" "+maxX);
+        this.minX = minX;
+        this.maxX = maxX;
+    }
+
+    public void SetDefaultBoundaries()
+    {
+        maxX = defaultMaxX;
+        maxY = defaultMaxY;
+        maxZ = defaultMaxZ;
     }
 
     /*public GameObject follow;

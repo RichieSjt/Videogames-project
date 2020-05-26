@@ -26,6 +26,8 @@ public class EnemySpawnerController : MonoBehaviour
         maxX = max.x;
         maxY = max.y;
         maxZ = max.z;
+
+        gameObject.GetComponent<CombatZoneController>().SetNumEnemies(quantity);
     }
 
     private void Update()
@@ -33,19 +35,15 @@ public class EnemySpawnerController : MonoBehaviour
         if (counter == quantity)
         {
             CancelInvoke();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
             
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void StartSpawnEnemies()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            GetComponent<BoxCollider>().enabled = false;
-            InvokeRepeating("Spawn",0f,4f);
-            InvokeRepeating("Spawn",1.5f,2f);
-        }
+        InvokeRepeating("Spawn",0f,4f);
+        InvokeRepeating("Spawn",1.5f,2f);
     }
 
     private void Spawn()
