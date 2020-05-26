@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 slope;
     private bool grounded;
     private float verticalVelocity;
+    private CheckpointDetection lastCheckpoint;
 
     [Header("Animator")]
     public Animator anim;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        lastCheckpoint = GetComponent<CheckpointDetection>();
         //Health setup
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
@@ -85,6 +87,8 @@ public class PlayerController : MonoBehaviour
         if (slope != Vector3.up) moveVector = StayFloor(moveVector); //Angle the vector to macth floor's curves
         
         controller.Move(moveVector*Time.deltaTime); //Move the controller
+
+        CheckLava();
     }
 
     private Vector3 Movement()
@@ -115,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckLava()
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, 1f, 12))
+        if (Physics.Raycast(transform.position, -Vector3.up, 4f, 12))
         {
             transform.position = new Vector3(67.77f, 5.8f, 0);
         }
@@ -189,8 +193,19 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsDead", true);
 
         //Disable enemy
-        GetComponent<CharacterController>().enabled = false;
-        this.enabled = false;
+        controller.enabled = false;
+        //this.enabled = false;
+
+        //Go to last checkpoint
+        StartCoroutine(GoLastCheckpoint(1.35f)); 
     }
 
+    IEnumerator GoLastCheckpoint(float time)
+    {
+        yield return new WaitForSeconds(time);
+        lastCheckpoint.ReturnToLastCheckpoint();
+        anim.SetBool("IsDead", false);
+        controller.enabled = true;
+        healthSystem.Heal(maxHealth);
+    }
 }

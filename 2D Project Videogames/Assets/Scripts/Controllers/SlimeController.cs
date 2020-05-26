@@ -60,7 +60,7 @@ public class SlimeController : Enemy
 
             //slimeRigidbody.AddForce(Vector3.up * 20f, ForceMode.Impulse);
             if(Time.time >= timeLoopSound){
-                SoundManager.PlaySound("SlimeMove", 1f);
+                SoundManager.PlaySound("SlimeMove", 0.2f);
                 timeLoopSound = Time.time + 1.5f;
             }
         }
@@ -117,7 +117,7 @@ public class SlimeController : Enemy
     {
         anim.SetBool("IsDead", true);
 
-        SoundManager.PlaySound("SlimeDie", 1f);
+        SoundManager.PlaySound("SlimeDie", 0.3f);
 
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
