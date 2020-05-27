@@ -11,9 +11,9 @@ public class EnemySpawnerController : MonoBehaviour
     private GameObject[] temp;
 
     [Header("Range")]
-    public Vector3 min;
-    public Vector3 max;
-    private float minX, minZ, maxX, maxZ, maxY;
+    public Transform player;
+    public float offset = 0;
+    private float x,y,z;
 
     [Header("Fixed positions")]
     public bool activateFixed = false;
@@ -22,18 +22,15 @@ public class EnemySpawnerController : MonoBehaviour
     
     private void Start()
     {
-        minX = min.x;
-        minZ = min.z;
-        maxX = max.x;
-        maxY = max.y;
-        maxZ = max.z;
-
-        gameObject.GetComponent<CombatZoneController>().SetNumEnemies(quantity);
         temp = new GameObject[quantity];
     }
 
     private void Update()
     {
+        x = player.position.x;
+        y = player.position.y;
+        z = player.position.z;
+
         if (counter == quantity)
         {
             CancelInvoke();
@@ -43,8 +40,8 @@ public class EnemySpawnerController : MonoBehaviour
 
     public void StartSpawnEnemies()
     {
-        InvokeRepeating("Spawn",0f,4f);
-        InvokeRepeating("Spawn",1.5f,2f);
+        InvokeRepeating("Spawn",1f,4f);
+        InvokeRepeating("Spawn",2.5f,3f);
     }
 
     private void Spawn()
@@ -68,7 +65,7 @@ public class EnemySpawnerController : MonoBehaviour
         }
         else
         {
-            Vector3 position = new Vector3(Random.Range(minX, maxX), maxY, Random.Range(minZ, maxZ));
+            Vector3 position = new Vector3(Random.Range(x-offset, x+offset), y, Random.Range(z-offset, z+offset));
             return position;
         } 
     }

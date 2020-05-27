@@ -6,7 +6,6 @@ public class CombatZoneController : MonoBehaviour
 {
     [Header("Boundaries")]
     public GameObject left, right;
-    private int enemies = 1000;
 
     [Header("Main Camera")]
     public CameraController mainCamera;
@@ -50,11 +49,6 @@ public class CombatZoneController : MonoBehaviour
         left.SetActive(false);
         right.SetActive(false);
         mainCamera.SetDefaultBoundaries();
-    }
-
-    public void SetNumEnemies(int enemies)
-    {
-        this.enemies = enemies;
     }
 
     public void RemainingEnemies()

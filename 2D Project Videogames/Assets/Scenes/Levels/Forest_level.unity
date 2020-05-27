@@ -9956,7 +9956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592223919}
   m_Layer: 14
-  m_Name: Combat zone
+  m_Name: Combat zones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20138,7 +20138,6 @@ GameObject:
   - component: {fileID: 1132811001}
   - component: {fileID: 1132811000}
   - component: {fileID: 1132811003}
-  - component: {fileID: 1132811005}
   - component: {fileID: 1132811006}
   m_Layer: 0
   m_Name: Main Camera
@@ -20154,7 +20153,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132810999}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1132811001
 Camera:
   m_ObjectHideFlags: 0
@@ -20295,21 +20294,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1132811005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132810999}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d40b21ae42e4ca4db588b384186ec89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forestStart: -67.5
-  castleStart: 69
-  bossStart1: 0
 --- !u!82 &1132811006
 AudioSource:
   m_ObjectHideFlags: 0
@@ -36661,6 +36645,16 @@ PrefabInstance:
         type: 3}
       propertyPath: min.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589439181258091548, guid: 7637ddfcbdc23a042822720f68bf6f55,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 603403507}
+    - target: {fileID: 5589439181258091548, guid: 7637ddfcbdc23a042822720f68bf6f55,
+        type: 3}
+      propertyPath: offset
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5698735708891754509, guid: 7637ddfcbdc23a042822720f68bf6f55,
         type: 3}
