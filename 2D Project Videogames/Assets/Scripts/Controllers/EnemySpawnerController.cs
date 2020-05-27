@@ -40,8 +40,8 @@ public class EnemySpawnerController : MonoBehaviour
 
     public void StartSpawnEnemies()
     {
-        InvokeRepeating("Spawn",1f,4f);
-        InvokeRepeating("Spawn",2.5f,3f);
+        InvokeRepeating("Spawn",2f,4f);
+        InvokeRepeating("Spawn",4.5f,3f);
     }
 
     private void Spawn()
