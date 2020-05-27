@@ -12,9 +12,17 @@ public class CombatZoneController : MonoBehaviour
     public CameraController mainCamera;
     public float boundariesOffset;
 
+    [Header("Check Enemines")]
+    private bool remaining = true;
+
     private void Update()
     {
-
+        if (remaining == false)
+        {
+            DisableBoundaries();
+            CancelInvoke();
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,15 +32,7 @@ public class CombatZoneController : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             EnableBoundaries();
             gameObject.GetComponent<EnemySpawnerController>().StartSpawnEnemies();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            enemies-=1;
-            Debug.Log("ENEMIES: " + enemies);
+            InvokeRepeating("RemainingEnemies",2f,1f);
         }
     }
 
@@ -41,7 +41,7 @@ public class CombatZoneController : MonoBehaviour
         left.SetActive(true);
         right.SetActive(true);
         float min = left.transform.position.x + boundariesOffset;
-        float max = right.transform.position.x + boundariesOffset;
+        float max = right.transform.position.x - boundariesOffset;
         mainCamera.SetBoundariesX(min, max);
     }
 
@@ -55,5 +55,10 @@ public class CombatZoneController : MonoBehaviour
     public void SetNumEnemies(int enemies)
     {
         this.enemies = enemies;
+    }
+
+    public void RemainingEnemies()
+    {
+        remaining = gameObject.GetComponent<EnemySpawnerController>().CheckRemainingEnemies();
     }
 }

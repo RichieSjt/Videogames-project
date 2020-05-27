@@ -8,6 +8,7 @@ public class EnemySpawnerController : MonoBehaviour
     public GameObject[] enemies;
     public int quantity;
     private int counter = 0;
+    private GameObject[] temp;
 
     [Header("Range")]
     public Vector3 min;
@@ -28,6 +29,7 @@ public class EnemySpawnerController : MonoBehaviour
         maxZ = max.z;
 
         gameObject.GetComponent<CombatZoneController>().SetNumEnemies(quantity);
+        temp = new GameObject[quantity];
     }
 
     private void Update()
@@ -36,8 +38,7 @@ public class EnemySpawnerController : MonoBehaviour
         {
             CancelInvoke();
             //Destroy(gameObject);
-        }
-            
+        }    
     }
 
     public void StartSpawnEnemies()
@@ -48,7 +49,7 @@ public class EnemySpawnerController : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(RandomEnemy(), RandomPosition(), Quaternion.identity);
+        temp[counter] = Instantiate(RandomEnemy(), RandomPosition(), Quaternion.identity);
         counter +=1;
     }
 
@@ -69,7 +70,21 @@ public class EnemySpawnerController : MonoBehaviour
         {
             Vector3 position = new Vector3(Random.Range(minX, maxX), maxY, Random.Range(minZ, maxZ));
             return position;
+        } 
+    }
+
+    public bool CheckRemainingEnemies()
+    {
+        bool enemies = true;
+        int counter = quantity;
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (temp[i] == null)
+                counter-=1;
         }
-        
+
+        if (counter == 0)
+            enemies = false;
+        return enemies;
     }
 }

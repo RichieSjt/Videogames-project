@@ -11,8 +11,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset = new Vector3(0, 10, -10);
     public Vector3 minPosition = new Vector3(0, 0, 0);
     public Vector3 maxPosition = new Vector3(0, 0, 0);
-    private float defaultMaxX, defaultMaxY, defaultMaxZ;
-    private float minX, minY, minZ, maxX, maxY, maxZ;
+    private Vector3 defaultMax;
 
     [Header("Smooth")]
     public bool enableSmooth = true;
@@ -21,19 +20,14 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        minX = minPosition.x;
-        minY = minPosition.y;
-        minZ = minPosition.z;
-        maxX = maxPosition.x;
-        maxY = maxPosition.y;
-        maxZ = maxPosition.z;
+        defaultMax = maxPosition;
     }
 
     private void LateUpdate()
     {
-        float x = Mathf.Clamp(follow.position.x, minX, maxX);
-        float y = Mathf.Clamp(follow.position.y, minY, maxY);
-        float z = Mathf.Clamp(follow.position.z, minZ, maxZ);
+        float x = Mathf.Clamp(follow.position.x, minPosition.x, maxPosition.x);
+        float y = Mathf.Clamp(follow.position.y, minPosition.y, maxPosition.y);
+        float z = Mathf.Clamp(follow.position.z, minPosition.z, maxPosition.z);
 
         desiredPosition = new Vector3(x,y,z) + offset;
 
@@ -45,37 +39,12 @@ public class CameraController : MonoBehaviour
 
     public void SetBoundariesX(float minX, float maxX)
     {
-        Debug.Log("CHANGED "+minX+" "+maxX);
-        this.minX = minX;
-        this.maxX = maxX;
+        minPosition = new Vector3(minX, minPosition.y, minPosition.z);
+        maxPosition = new Vector3(maxX, maxPosition.y, maxPosition.z);
     }
 
     public void SetDefaultBoundaries()
     {
-        maxX = defaultMaxX;
-        maxY = defaultMaxY;
-        maxZ = defaultMaxZ;
+        maxPosition = defaultMax;
     }
-
-    /*public GameObject follow;
-    private Vector3 velocity;
-    [SerializeField] private Vector3 minPos, maxPos;
-    [SerializeField] private float smoothTime;
-    
-    void FixedUpdate()
-    {
-        float x = Mathf.SmoothDamp(transform.position.x,
-            follow.transform.position.x,
-            ref velocity.x,
-            smoothTime);
-        float z = Mathf.SmoothDamp(transform.position.z,
-            follow.transform.position.z,
-            ref velocity.z,
-            smoothTime);
-
-        transform.position = new Vector3(
-            Mathf.Clamp(x, minPos.x, maxPos.x),
-            transform.position.y,
-            Mathf.Clamp(z, minPos.z, maxPos.z));
-    }*/
 }
