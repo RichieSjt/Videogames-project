@@ -10,7 +10,9 @@ public class SwitchLevel : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            //Scene sceneToLoad = SceneManager.GetSceneByBuildIndex(sceneIndex);
             SceneManager.LoadScene(sceneIndex);
+            //SceneManager.MoveGameObjectToScene(other.gameObject, sceneToLoad);
             Debug.Log("NEW SCENE");
         }
     }

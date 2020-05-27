@@ -1,0 +1,694 @@
+fileFormatVersion: 2
+guid: d364a16ffe9d88d45adda13207eb81f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6556866237665478200
+    second: PixelBuildings_0
+  - first:
+      213: 1660532205530397164
+    second: PixelBuildings_1
+  - first:
+      213: -6649631519853288993
+    second: PixelBuildings_2
+  - first:
+      213: 2400385674176883951
+    second: PixelBuildings_3
+  - first:
+      213: -3288525930013036510
+    second: PixelBuildings_4
+  - first:
+      213: -3452645298674246494
+    second: PixelBuildings_5
+  - first:
+      213: 5351413263249660156
+    second: PixelBuildings_6
+  - first:
+      213: -8695996637243690082
+    second: PixelBuildings_7
+  - first:
+      213: 2668011283013499906
+    second: PixelBuildings_8
+  - first:
+      213: 2795491942466083565
+    second: PixelBuildings_9
+  - first:
+      213: 7384791072544876900
+    second: PixelBuildings_10
+  - first:
+      213: -1435000243705929249
+    second: PixelBuildings_11
+  - first:
+      213: 6991781760550409504
+    second: PixelBuildings_12
+  - first:
+      213: 4187102141893991989
+    second: PixelBuildings_13
+  - first:
+      213: -5639013381158185123
+    second: PixelBuildings_14
+  - first:
+      213: -7261929014336834659
+    second: PixelBuildings_15
+  - first:
+      213: 8707323668142398452
+    second: PixelBuildings_16
+  - first:
+      213: -2333954048467570323
+    second: PixelBuildings_17
+  - first:
+      213: 5207628909387037455
+    second: PixelBuildings_18
+  - first:
+      213: 758600840677856934
+    second: PixelBuildings_19
+  - first:
+      213: 2203082235288077966
+    second: PixelBuildings_20
+  - first:
+      213: 2931687404612729165
+    second: PixelBuildings_21
+  - first:
+      213: -7789384478287155457
+    second: PixelBuildings_22
+  - first:
+      213: -8355612440706937083
+    second: PixelBuildings_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PixelBuildings_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 394
+        width: 24
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9723885e45105a0800000000000000
+      internalID: -6556866237665478200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 370
+        width: 190
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce93cb83e356b0710800000000000000
+      internalID: 1660532205530397164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 436
+        width: 118
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd167eb2d53c7b3a0800000000000000
+      internalID: -6649631519853288993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 288
+        width: 124
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fecef398d02ef4120800000000000000
+      internalID: 2400385674176883951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_4
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 376
+        width: 104
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22079ea071fcc52d0800000000000000
+      internalID: -3288525930013036510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 186
+        width: 148
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac591dc46db510d0800000000000000
+      internalID: -3452645298674246494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 332
+        width: 90
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf85f4a820a044a40800000000000000
+      internalID: 5351413263249660156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_7
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 320
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93391db12d915780800000000000000
+      internalID: -8695996637243690082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_8
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 320
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20cf0cc402ea60520800000000000000
+      internalID: 2668011283013499906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_9
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 324
+        width: 50
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea582b4c159bc620800000000000000
+      internalID: 2795491942466083565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 182
+        width: 174
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469638baa5c0c7660800000000000000
+      internalID: 7384791072544876900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_11
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 286
+        width: 54
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd12f4d91ead51ce0800000000000000
+      internalID: -1435000243705929249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_12
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 199
+        width: 68
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02599a8977cc70160800000000000000
+      internalID: 6991781760550409504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_13
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 204
+        width: 62
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e5eddb6339b1a30800000000000000
+      internalID: 4187102141893991989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 186
+        width: 126
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d575464e4333eb1b0800000000000000
+      internalID: -5639013381158185123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_16
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 16
+        width: 122
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb9af72eb0a6d870800000000000000
+      internalID: 8707323668142398452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 116
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d617103a8212c9fd0800000000000000
+      internalID: -2333954048467570323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 4
+        width: 124
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bb112e6e6354840800000000000000
+      internalID: 5207628909387037455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_19
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 98
+        width: 124
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a69ae20277178a00800000000000000
+      internalID: 758600840677856934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_20
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 114
+        width: 60
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86c15dde9be29e10800000000000000
+      internalID: 2203082235288077966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_21
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 14
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49bd6869227fa820800000000000000
+      internalID: 2931687404612729165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_22
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 14
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffea0c0461c86e390800000000000000
+      internalID: -7789384478287155457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PixelBuildings_23
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 70
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f04de41c6ea0c80800000000000000
+      internalID: -8355612440706937083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
