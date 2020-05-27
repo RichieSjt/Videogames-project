@@ -23,8 +23,12 @@ public class InventoryUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            DisplayInventory();
         }
+    }
+
+    public void DisplayInventory(){
+        inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
     void UpdateUI()
