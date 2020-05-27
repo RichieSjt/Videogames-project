@@ -46,16 +46,23 @@ public class PlayerCombat : MonoBehaviour
 
     private void Attack()
     {
+        hitBox.GetComponent<HitBox>().EnableHitBox();
+
         playerAnim.SetTrigger("Attack");
         SoundManager.PlaySound("SwordSlashPlayer", 1f);
 
-        hitBox.GetComponent<HitBox>().EnableHitBox();
+        StartCoroutine(GetHittedEnemy(0.3f));
+    }
 
+    IEnumerator GetHittedEnemy(float time)
+    {
+        yield return new WaitForSeconds(time);
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Enemy");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<Enemy>().TakeDamage(attackDamage);
 
         hitBox.GetComponent<HitBox>().DisableHitBox(0.15f);
+        hittedEnemy = null;
     }
 
     private void MagicAttack()

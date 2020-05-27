@@ -22,13 +22,16 @@ public class HitBox : MonoBehaviour
             hitPlayer = other;
     }
 
-    public Collider GetHittedObject(string name){
-        if (name == "Enemy"){
+    public Collider GetHittedObject(string name)
+    {
+        if (name == "Enemy")
+        {
             Collider enemy = hitEnemies;
             hitEnemies = null;
             return enemy;
         }
-        if (name == "Player"){
+        if (name == "Player")
+        {
             Collider player = hitPlayer;
             hitPlayer = null;
             return player;
