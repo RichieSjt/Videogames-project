@@ -22,6 +22,7 @@ public class SkeletonController : Enemy
     [Header("Health")]
     private HealthSystem healthSystem;
     public int maxHealth = 100;
+    public GameObject floatingTextPrefab;
 
     [Header("Attack Settings")]
     public GameObject hitBox;
@@ -102,10 +103,18 @@ public class SkeletonController : Enemy
         anim.SetTrigger("Hurt");
         SoundManager.PlaySound("SkeletonHurt", 1f);
 
+        ShowFloatingText(damage);
+
         if(healthSystem.GetHealth() <= 0)
         {
             Die();
         }
+    }
+
+    private void ShowFloatingText(int damage)
+    {
+        var go=Instantiate(floatingTextPrefab,transform.position,Quaternion.identity,transform);
+        go.GetComponent<TextMesh>().text=damage.ToString();
     }
 
     private void Die()
