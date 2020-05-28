@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SkeletonController : Enemy
+public class MushroomController : Enemy
 {
 
     [Header("Animator")]    
@@ -26,9 +26,9 @@ public class SkeletonController : Enemy
 
     [Header("Attack Settings")]
     public GameObject hitBox;
-    public int attackDamage = 50;
-    public float attackRate = 2f;
-    private float nextAttackTime = 0f;
+    public int attackDamage = 0;
+    public float attackRate = 0;
+    private float nextAttackTime = 0;
 
     void Start()
     {
@@ -85,7 +85,7 @@ public class SkeletonController : Enemy
         hitBox.GetComponent<HitBox>().EnableHitBox();
         anim.SetTrigger("Attack");
         
-        SoundManager.PlaySound("SwordSlashSkeleton", 1f);
+        //SoundManager.PlaySound("SwordSlashSkeleton", 1f);
 
         StartCoroutine(GetHittedPlayer(0.2f));     
     }
@@ -105,7 +105,7 @@ public class SkeletonController : Enemy
         healthSystem.TakeDamage(damage);
         //Debug.Log("Enemy health: "+currentHealth);
         anim.SetTrigger("Hurt");
-        SoundManager.PlaySound("SkeletonHurt", 1f);
+        //SoundManager.PlaySound("SkeletonHurt", 1f);
 
         ShowFloatingText(damage);
 
@@ -124,7 +124,7 @@ public class SkeletonController : Enemy
     private void Die()
     {
         anim.SetBool("IsDead", true);
-        SoundManager.PlaySound("SkeletonDie", 1f);
+        //SoundManager.PlaySound("SkeletonDie", 1f);
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
         this.enabled = false;
@@ -138,7 +138,7 @@ public class SkeletonController : Enemy
     }
 
     private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

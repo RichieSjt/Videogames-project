@@ -254,7 +254,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!195 &5885017714747728107
 NavMeshAgent:
@@ -270,7 +270,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 0
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -309,9 +309,9 @@ MonoBehaviour:
   deadDuration: 1.4
   lookRadius: 5.44
   speed: 1.5
-  maxHealth: 100
+  maxHealth: 20
   floatingTextPrefab: {fileID: 3098611019408375244, guid: 043e50593d074ec40b03be41d8116d44,
     type: 3}
   hitBox: {fileID: 5885017714422434211}
-  attackDamage: 10
+  attackDamage: 5
   attackRate: 2

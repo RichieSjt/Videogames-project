@@ -92,9 +92,15 @@ public class SlimeController : Enemy
 
     private void Attack()
     {
-        anim.SetTrigger("Attack");
         hitBox.GetComponent<HitBox>().EnableHitBox();
+        anim.SetTrigger("Attack");
 
+        StartCoroutine(GetHittedPlayer(0.2f));     
+    }
+
+    IEnumerator GetHittedPlayer(float time)
+    {
+        yield return new WaitForSeconds(time);
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
@@ -140,7 +146,7 @@ public class SlimeController : Enemy
     }
 
     private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

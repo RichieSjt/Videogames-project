@@ -51,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
         playerAnim.SetTrigger("Attack");
         SoundManager.PlaySound("SwordSlashPlayer", 1f);
 
-        StartCoroutine(GetHittedEnemy(0.3f));
+        StartCoroutine(GetHittedEnemy(0.2f));
     }
 
     IEnumerator GetHittedEnemy(float time)

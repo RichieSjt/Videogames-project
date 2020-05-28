@@ -159,11 +159,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 7752858093028244559}
   hitBox: {fileID: 3062280507158817443}
-  attackDamage: 50
+  attackDamage: 10
   attackRate: 2
   fireBallPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
     type: 3}
-  magicDamage: 30
+  magicDamage: 7
   manaPerAttack: 40
   magicAttackRate: 4
   firepoint: {fileID: 640158034450124516}
