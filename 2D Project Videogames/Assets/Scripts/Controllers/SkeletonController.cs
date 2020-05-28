@@ -87,7 +87,7 @@ public class SkeletonController : Enemy
         
         SoundManager.PlaySound("SwordSlashSkeleton", 1f);
 
-        Invoke("GetHittedPlayer", 0.2f); 
+        Invoke("GetHittedPlayer", 0.4f); 
     }
 
     private void GetHittedPlayer()
