@@ -102,14 +102,12 @@ public class SlimeController : Enemy
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
-
         hitBox.GetComponent<HitBox>().DisableHitBox(attackDuration);
     }
 
     public override void TakeDamage(int damage)
     {
         healthSystem.TakeDamage(damage);
-        //Debug.Log("Slime health: "+currentHealth);
         anim.SetTrigger("Hurt");
 
         ShowFloatingText(damage);
@@ -136,11 +134,6 @@ public class SlimeController : Enemy
         agent.enabled = false;
         this.enabled = false;
         Invoke("DestroyEnemy", deadDuration);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

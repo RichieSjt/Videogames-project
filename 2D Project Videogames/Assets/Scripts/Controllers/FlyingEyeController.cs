@@ -76,7 +76,6 @@ public class FlyingEyeController : Enemy
     {
         hitBox.GetComponent<HitBox>().EnableHitBox();
         anim.SetTrigger("Attack");
-        
         //SoundManager.PlaySound("SwordSlashSkeleton", 1f);  
     }
 
@@ -85,7 +84,6 @@ public class FlyingEyeController : Enemy
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
-
         hitBox.GetComponent<HitBox>().DisableHitBox(attackDuration);
     }
 
@@ -119,11 +117,6 @@ public class FlyingEyeController : Enemy
         agent.enabled = false;
         this.enabled = false;
         Invoke("DestroyEnemy", deadDuration);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

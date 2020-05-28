@@ -84,10 +84,8 @@ public class SkeletonController : Enemy
     {
         hitBox.GetComponent<HitBox>().EnableHitBox();
         anim.SetTrigger("Attack");
-        
         SoundManager.PlaySound("SwordSlashSkeleton", 1f);
-
-        Invoke("GetHittedPlayer", 0.4f); 
+        Invoke("GetHittedPlayer", 0.4f);
     }
 
     private void GetHittedPlayer()
@@ -95,14 +93,12 @@ public class SkeletonController : Enemy
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
-
         hitBox.GetComponent<HitBox>().DisableHitBox(attackDuration);
     }
 
     public override void TakeDamage(int damage)
     {
         healthSystem.TakeDamage(damage);
-        //Debug.Log("Enemy health: "+currentHealth);
         anim.SetTrigger("Hurt");
         SoundManager.PlaySound("SkeletonHurt", 1f);
 
@@ -129,11 +125,6 @@ public class SkeletonController : Enemy
         agent.enabled = false;
         this.enabled = false;
         Invoke("DestroyEnemy", deadDuration);
-    }
-
-    private void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public virtual void TakeDamage(int damage){}
 
-    public virtual void TakeDamage(int damage)
+    public virtual void DestroyEnemy()
     {
-        
+        Destroy(gameObject);
     }
 }
