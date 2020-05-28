@@ -51464,7 +51464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7438076685824059751}
   - component: {fileID: 7158685177720352732}
-  - component: {fileID: 7438076685824059754}
+  - component: {fileID: 7438076685824059749}
   - component: {fileID: 7438076685824059752}
   - component: {fileID: 7438076685824059753}
   - component: {fileID: 7438076685824059750}
@@ -51475,6 +51475,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7438076685824059749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7438076685824059748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788ff39bf83d55243a71396662cbea7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7755382589496690864}
+  attackDuration: 0.5
+  deadDuration: 0
+  lookRadius: 3.5
+  speed: 300
+  maxHealth: 10
+  floatingTextPrefab: {fileID: 5901154125420934263, guid: d2661cf55e712a144bfc766ca9bf6525,
+    type: 3}
+  hitBox: {fileID: 2989090718133703009}
+  attackDamage: 40
 --- !u!136 &7438076685824059750
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51514,11 +51536,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.7
-  m_Speed: 3.5
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 0
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -51542,29 +51564,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &7438076685824059754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7438076685824059748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ee29e3dcfde0b04f8a03502c9716f9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  attackDuration: 0.25
-  deadDuration: 1.5
-  lookRadius: 8
-  speed: 3
-  maxHealth: 30
-  floatingTextPrefab: {fileID: 5901154125420934263, guid: d2661cf55e712a144bfc766ca9bf6525,
-    type: 3}
-  hitBox: {fileID: 2989090718133703009}
-  attackDamage: 10
-  attackRate: 1.8
 --- !u!1001 &7440425636191195727
 PrefabInstance:
   m_ObjectHideFlags: 0

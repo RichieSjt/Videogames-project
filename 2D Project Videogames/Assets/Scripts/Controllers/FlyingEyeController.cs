@@ -27,8 +27,7 @@ public class FlyingEyeController : Enemy
     [Header("Attack Settings")]
     public GameObject hitBox;
     public int attackDamage = 0;
-    public float attackRate = 0;
-    private float nextAttackTime = 0;
+    private bool onceCall = false;
 
     void Start()
     {
@@ -52,22 +51,14 @@ public class FlyingEyeController : Enemy
         {
             agent.SetDestination(target.position);
             agent.speed = speed;
-            anim.SetBool("IsMoving", true);
-        }
-        else if(distanceBetween > lookRadius)
-        {
-            anim.SetBool("IsMoving", false);
-            agent.speed = 0;
-        }
-        if(distanceBetween <= agent.stoppingDistance)
-        {
-            agent.speed = 0;
 
-            if (Time.time >= nextAttackTime)
+            if (!onceCall)
             {
                 Attack();
-                nextAttackTime = Time.time + attackRate;
+                Invoke("DestroyAfterTime", attackDuration);
+                onceCall = true;
             }
+            //StartCoroutine(DestroyAfterTime(attackDuration));
         }
 
         if(target.position.x > transform.position.x)
@@ -128,12 +119,11 @@ public class FlyingEyeController : Enemy
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
         this.enabled = false;
-        StartCoroutine(DestroyAfterTime(deadDuration));
+        Invoke("DestroyAfterTime", deadDuration);
     }
 
-    IEnumerator DestroyAfterTime(float time)
+    private void DestroyAfterTime()
     {
-        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 
