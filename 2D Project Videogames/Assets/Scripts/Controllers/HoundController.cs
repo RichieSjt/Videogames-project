@@ -53,7 +53,7 @@ public class HoundController : Enemy
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-
+        
         if (stopped)
             return;
 
@@ -70,11 +70,13 @@ public class HoundController : Enemy
             agent.speed = 0;
         }
 
-        if(distanceBetween == agent.stoppingDistance)
+        if(distanceBetween <= 0.38f)
         {
             agent.speed = 0;
+            anim.SetBool("IsMoving", false);
             stopped = true;
-            Invoke("MoveAgain", 3f);
+            Invoke("MoveAgain", 1f);
+
         }
     }
 
@@ -85,6 +87,7 @@ public class HoundController : Enemy
 
     private void GetHittedPlayer()
     {
+        hitBox.GetComponent<HitBox>().EnableHitBox();
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);

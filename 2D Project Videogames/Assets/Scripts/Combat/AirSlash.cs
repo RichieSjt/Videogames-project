@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class AirSlash : MonoBehaviour
 {
-    private Rigidbody fireBallRB;
+    private Rigidbody airSlashRB;
     private Vector3 shootDirection;
     public float destroyTime = 4f;
-    public float speed = 20f;
+    public float speed = 30f;
     private int damage;
 
     public void Setup(Vector3 shootDirection){
         this.shootDirection = shootDirection;
-        fireBallRB = GetComponent<Rigidbody>();
-        fireBallRB.AddForce(shootDirection * speed, ForceMode.Impulse);
+        airSlashRB = GetComponent<Rigidbody>();
+        airSlashRB.AddForce(shootDirection * speed, ForceMode.Impulse);
 
         Destroy(gameObject, destroyTime);
     }
@@ -30,6 +30,8 @@ public class FireBall : MonoBehaviour
         {
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
+            //Apply knockback to the enemies
+            //enemy.ApplyKnockback();
             Destroy(gameObject);
         }
     }

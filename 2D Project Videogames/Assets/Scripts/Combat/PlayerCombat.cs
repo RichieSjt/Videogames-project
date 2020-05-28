@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     private float nextAttackTime = 0f;
 
     [Header("Magic Attack Settings")]
-    public GameObject fireBallPrefab;
+    private MagicController magicController;
     public int magicDamage = 30;
     public int manaPerAttack = 40;
     public float magicAttackRate = 1f;
@@ -24,6 +24,11 @@ public class PlayerCombat : MonoBehaviour
     public Transform firepoint;
     public Transform firepointEnd;
     
+    private void Awake()
+    {
+        magicController = GetComponent<MagicController>();
+    }
+
     private void Update()
     {
         if (Time.time >= nextAttackTime)
@@ -38,7 +43,8 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                MagicAttack();
+                Vector3 shootDirection = (firepointEnd.position - firepoint.position).normalized;
+                magicController.InstantiateMagicAttack(shootDirection, firepoint);
                 nextMagicTime = Time.time + 1f / magicAttackRate;
             }
         }
@@ -61,29 +67,5 @@ public class PlayerCombat : MonoBehaviour
 
         hitBox.GetComponent<HitBox>().DisableHitBox(0.15f);
         hittedEnemy = null;
-    }
-
-    private void MagicAttack()
-    {
-        ManaSystem playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
-
-        if(playerMS.mana >= manaPerAttack)
-        {  
-            playerAnim.SetTrigger("Attack");
-            playerMS.ReduceMana(manaPerAttack);
-            Vector3 shootDirection = (firepointEnd.position - firepoint.position).normalized;
-            SoundManager.PlaySound("FireBall", 1f);
-            
-            var rotationVector = transform.rotation.eulerAngles;
-
-            if(shootDirection.x > 0)
-                rotationVector.z = 90;
-            else
-                rotationVector.z = -90;
-            
-            GameObject fireball = Instantiate(fireBallPrefab, firepoint.position, Quaternion.Euler(rotationVector));
-            fireball.GetComponent<FireBall>().SetMagicDamage(magicDamage);
-            fireball.GetComponent<FireBall>().Setup(shootDirection);
-        }
     }
 }
