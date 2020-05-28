@@ -13,7 +13,7 @@ public class MagicController : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject slashPrefab;
     public GameObject electricityPrefab;
-    public ManaSystem playerMs;
+    public ManaSystem playerMS;
     
     [Header("Fire magic settings")]
     public int fireballDamage = 30;
@@ -27,7 +27,7 @@ public class MagicController : MonoBehaviour
     public int electricityDamage = 20;
     public int electricPerAttack = 20;
 
-    private void Awake()
+    private void Start()
     {
         currentMagic = 0;
         playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
