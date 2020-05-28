@@ -87,12 +87,11 @@ public class MushroomController : Enemy
         
         //SoundManager.PlaySound("SwordSlashSkeleton", 1f);
 
-        StartCoroutine(GetHittedPlayer(0.2f));     
+        Invoke("GetHittedPlayer", 0.4f); 
     }
 
-    IEnumerator GetHittedPlayer(float time)
+    private void GetHittedPlayer()
     {
-        yield return new WaitForSeconds(time);
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
@@ -127,13 +126,13 @@ public class MushroomController : Enemy
         //SoundManager.PlaySound("SkeletonDie", 1f);
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
+        agent.enabled = false;
         this.enabled = false;
-        StartCoroutine(DestroyAfterTime(deadDuration));
+        Invoke("DestroyEnemy", deadDuration);
     }
 
-    IEnumerator DestroyAfterTime(float time)
+    private void DestroyEnemy()
     {
-        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 

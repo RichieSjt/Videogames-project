@@ -46,19 +46,20 @@ public class FlyingEyeController : Enemy
     private void EnemyAIController()
     {
         float distanceBetween = Vector3.Distance(target.position, transform.position);
-        
+
         if(distanceBetween <= lookRadius)
         {
             agent.SetDestination(target.position);
             agent.speed = speed;
 
+            GetHittedPlayer();
+
             if (!onceCall)
             {
                 Attack();
-                Invoke("DestroyAfterTime", attackDuration);
+                Invoke("DestroyEnemy", attackDuration);
                 onceCall = true;
             }
-            //StartCoroutine(DestroyAfterTime(attackDuration));
         }
 
         if(target.position.x > transform.position.x)
@@ -76,14 +77,11 @@ public class FlyingEyeController : Enemy
         hitBox.GetComponent<HitBox>().EnableHitBox();
         anim.SetTrigger("Attack");
         
-        //SoundManager.PlaySound("SwordSlashSkeleton", 1f);
-
-        StartCoroutine(GetHittedPlayer(0.2f));     
+        //SoundManager.PlaySound("SwordSlashSkeleton", 1f);  
     }
 
-    IEnumerator GetHittedPlayer(float time)
+    private void GetHittedPlayer()
     {
-        yield return new WaitForSeconds(time);
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
@@ -118,11 +116,12 @@ public class FlyingEyeController : Enemy
         //SoundManager.PlaySound("SkeletonDie", 1f);
         //Disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
+        agent.enabled = false;
         this.enabled = false;
-        Invoke("DestroyAfterTime", deadDuration);
+        Invoke("DestroyEnemy", deadDuration);
     }
 
-    private void DestroyAfterTime()
+    private void DestroyEnemy()
     {
         Destroy(gameObject);
     }
@@ -131,4 +130,12 @@ public class FlyingEyeController : Enemy
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+            Invoke("DestroyEnemy", 0.15f);
+    }
+
+    
 }

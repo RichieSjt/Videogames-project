@@ -50,13 +50,11 @@ public class PlayerCombat : MonoBehaviour
 
         playerAnim.SetTrigger("Attack");
         SoundManager.PlaySound("SwordSlashPlayer", 1f);
-
-        StartCoroutine(GetHittedEnemy(0.2f));
+        Invoke("GetHittedEnemy", 0.2f);
     }
 
-    IEnumerator GetHittedEnemy(float time)
+    private void GetHittedEnemy()
     {
-        yield return new WaitForSeconds(time);
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Enemy");
         if (hittedEnemy != null)
             hittedEnemy.GetComponent<Enemy>().TakeDamage(attackDamage);
