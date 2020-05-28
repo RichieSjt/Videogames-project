@@ -47,13 +47,4 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void SaveGame()
-    {
-        Debug.Log("Saving Game...");
-    }
-
-    public void LoadGame()
-    {
-        Debug.Log("Loading Game...");
-    }
 }
