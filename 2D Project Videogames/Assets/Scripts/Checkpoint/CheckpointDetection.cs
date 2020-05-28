@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointDetection : MonoBehaviour
 {
-    private Vector3 lastCheckpoint;
+    public static Vector3 lastCheckpoint;
 
     public void SetLastCheckpoint(Vector3 checkpoint)
     {

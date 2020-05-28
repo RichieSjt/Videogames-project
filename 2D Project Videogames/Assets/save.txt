@@ -1,0 +1,1 @@
+{"playerPosition":{"x":7.6679606437683109,"y":1.6999999284744263,"z":-2.090501308441162},"playerHealth":50,"InventoryList":[{"instanceID":18326},{"instanceID":18326}]}

@@ -26,6 +26,12 @@ public class HealthSystem : MonoBehaviour{
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
     }
 
+    public void SetHealth(int health)
+    {
+        this.health=health;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+
     public void Heal(int healAmount)
     {
         health += healAmount;
