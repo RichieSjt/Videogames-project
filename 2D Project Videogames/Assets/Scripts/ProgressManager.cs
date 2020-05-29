@@ -10,8 +10,8 @@ public class ProgressManager : MonoBehaviour
         SaveObject saveObject = new SaveObject {
             playerPosition = CheckpointDetection.lastCheckpoint,
             playerHealth = PlayerManager.instance.player.GetComponent<HealthSystem>().GetHealth(),
-            currentMagic = MagicController.currentMagic,
-            numberOfMagicAttacks = MagicController.numberOfMagicAttacks,
+            savedCurrentMagic = MagicController.currentMagic,
+            savedMagicAttacks = MagicController.numberOfMagicAttacks,
             InventoryList = Inventory.instance.items,
         };
         string json = JsonUtility.ToJson(saveObject);
@@ -22,8 +22,8 @@ public class ProgressManager : MonoBehaviour
         Debug.Log("FILE SUCCESSFULLY SAVED");
         Debug.Log("Player position: " + saveObject.playerPosition);
         Debug.Log("Player health: " + saveObject.playerHealth);
-        Debug.Log("Magic attacks: " + saveObject.numberOfMagicAttacks);
-        Debug.Log("Current magic: " + saveObject.currentMagic);
+        Debug.Log("Magic attacks: " + saveObject.savedMagicAttacks);
+        Debug.Log("Current magic: " + saveObject.savedCurrentMagic);
         #endregion
     }
 
@@ -41,8 +41,8 @@ public class ProgressManager : MonoBehaviour
     {
         public Vector3 playerPosition;
         public int playerHealth;
-        public int currentMagic;
-        public int numberOfMagicAttacks;
+        public int savedCurrentMagic;
+        public int savedMagicAttacks;
         public List<Item> InventoryList = new List<Item>();
     
     }

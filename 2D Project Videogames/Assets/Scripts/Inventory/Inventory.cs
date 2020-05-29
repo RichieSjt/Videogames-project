@@ -54,5 +54,8 @@ public class Inventory : MonoBehaviour
         if(onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
     }
+
+    #region ProgressManager
+    #endregion
     
 }

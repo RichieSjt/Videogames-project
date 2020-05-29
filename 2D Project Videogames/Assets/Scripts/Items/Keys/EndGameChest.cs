@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndGameChest : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        if(KeysController.CheckKeys())
+        if(KeysManager.CheckKeys())
         {
             Debug.Log("The player has all the keys, the game ends");
             //End game

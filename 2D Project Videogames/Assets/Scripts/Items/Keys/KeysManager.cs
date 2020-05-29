@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeysController : MonoBehaviour
+public class KeysManager : MonoBehaviour
 {
     public static bool key1;
     public static bool key2;

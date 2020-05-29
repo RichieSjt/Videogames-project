@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class MagicController : MonoBehaviour
@@ -31,6 +32,7 @@ public class MagicController : MonoBehaviour
     private void Start()
     {
         currentMagic = 0;
+        Load();
         playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
     }
 
@@ -108,4 +110,23 @@ public class MagicController : MonoBehaviour
             Debug.Log("Instantiating electricity magic");
         }
     }
+
+    #region ProgressManager
+    public class SaveObject
+    {
+        public int savedCurrentMagic;
+        public int savedMagicAttacks;
+    }
+
+    public void Load()
+    {
+        if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
+            string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
+
+            SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+            currentMagic = saveObject.savedCurrentMagic;
+            numberOfMagicAttacks = saveObject.savedMagicAttacks;
+        }
+    }
+    #endregion
 }

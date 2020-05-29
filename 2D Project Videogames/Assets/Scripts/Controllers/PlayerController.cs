@@ -215,6 +215,7 @@ public class PlayerController : MonoBehaviour
         healthSystem.Heal(maxHealth);
     }
 
+    #region ProgressManager
     private class SaveObject
     {
         public Vector3 playerPosition;
@@ -231,4 +232,5 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(saveObject.playerPosition.x, saveObject.playerPosition.y, saveObject.playerPosition.z);
         }
     }
+    #endregion
 }

@@ -11,23 +11,23 @@ public class KeyDisplayUI : MonoBehaviour
 
     private void Update() {
 
-        if(KeysController.key1)
+        if(KeysManager.key1)
+        {
+            var tempColor = keysIcons[0].color;
+            tempColor.a = 1f;
+            keysIcons[0].color = tempColor;
+        }
+        if(KeysManager.key2)
         {
             var tempColor = keysIcons[1].color;
             tempColor.a = 1f;
             keysIcons[1].color = tempColor;
         }
-        else if(KeysController.key2)
+        if(KeysManager.key3)
         {
             var tempColor = keysIcons[2].color;
             tempColor.a = 1f;
             keysIcons[2].color = tempColor;
-        }
-        else if(KeysController.key3)
-        {
-            var tempColor = keysIcons[3].color;
-            tempColor.a = 1f;
-            keysIcons[3].color = tempColor;
         }
     }
 }
