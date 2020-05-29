@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5688114528035423215}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MaybeDeadBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108924623603612888}
   - component: {fileID: 3492490031819526128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}

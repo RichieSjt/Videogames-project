@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7580450697347071477}
   - component: {fileID: 7943631763194696147}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785233125167588954}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

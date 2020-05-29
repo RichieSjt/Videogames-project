@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493316939432521862}
   - component: {fileID: 8001468978177839869}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5018184592284370268}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DeadBush 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2633319388057261790}
   - component: {fileID: 2329342783511805820}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tombstone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6506892443953897240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tombstone7
   m_TagString: Untagged
   m_Icon: {fileID: 0}

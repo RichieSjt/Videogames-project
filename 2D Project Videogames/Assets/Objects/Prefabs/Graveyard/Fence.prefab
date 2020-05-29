@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6887547276734642807}
   - component: {fileID: 2797578628053277436}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618771916543490782}
   - component: {fileID: 7257937280019440013}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}

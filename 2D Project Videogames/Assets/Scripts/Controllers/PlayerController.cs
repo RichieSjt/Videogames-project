@@ -226,11 +226,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-     private class SaveObject
+    private class SaveObject
     {
         public Vector3 playerPosition;
         public int playerHealth;
         public List<Item> InventoryList = new List<Item>();
     
-    }
+    } 
 }

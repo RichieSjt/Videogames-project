@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5297711244406359692}
   - component: {fileID: 2613289133663227952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LeftFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7154784629734586869}
   - component: {fileID: 5899942589603355123}
-  m_Layer: 0
-  m_Name: LeftFence
+  m_Layer: 11
+  m_Name: FenceLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6792654483479657194}
   - component: {fileID: 6792654483479657189}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OrangeTulips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6792654483585035399}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PurpleTulips
   m_TagString: Untagged
   m_Icon: {fileID: 0}

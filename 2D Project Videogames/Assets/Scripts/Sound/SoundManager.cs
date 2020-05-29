@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip SlimeMove,SpiderAttack,SpiderDie,SpiderHurt,SpiderMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire;
-    static AudioSource audio;
+    static AudioSource audioSource;
 
     void Start(){
 
@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
         SpiderHurt = Resources.Load<AudioClip>("SpiderHurt");
         
 
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }   
 
     public static void PlaySound(string clip, float volume){
@@ -32,56 +32,56 @@ public class SoundManager : MonoBehaviour
         //SoundManager.PlaySound("soundName");
         switch(clip){
             case "SlimeMove":
-                audio.PlayOneShot(SlimeMove);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SlimeMove);
+                audioSource.volume = volume;
                 break;
             case "SlimeDie":
-                audio.PlayOneShot(SlimeDie);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SlimeDie);
+                audioSource.volume = volume;
                 break;
             case "FireBall":
-                audio.PlayOneShot(FireBall);
-                audio.volume = volume;
+                audioSource.PlayOneShot(FireBall);
+                audioSource.volume = volume;
                 break;
             case "SwordSlashPlayer":
-                audio.PlayOneShot(SwordSlashPlayer);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SwordSlashPlayer);
+                audioSource.volume = volume;
                 break;
             case "SwordSlashSkeleton":
-                audio.PlayOneShot(SwordSlashSkeleton);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SwordSlashSkeleton);
+                audioSource.volume = volume;
                 break;
             case "SkeletonDie":
-                audio.PlayOneShot(SkeletonDie);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SkeletonDie);
+                audioSource.volume = volume;
                 break;
             case "SkeletonHurt":
-                audio.PlayOneShot(SkeletonHurt);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SkeletonHurt);
+                audioSource.volume = volume;
                 break;
             case "PlayerHurt":
-                audio.PlayOneShot(PlayerHurt);
-                audio.volume = volume;
+                audioSource.PlayOneShot(PlayerHurt);
+                audioSource.volume = volume;
                 break;
             case "BossFire":
-                audio.PlayOneShot(BossFire);
-                audio.volume = volume;
+                audioSource.PlayOneShot(BossFire);
+                audioSource.volume = volume;
                 break;
             case "SpiderMove":
-                audio.PlayOneShot(SpiderMove);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SpiderMove);
+                audioSource.volume = volume;
                 break;
             case "SpiderAttack":
-                audio.PlayOneShot(SpiderAttack);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SpiderAttack);
+                audioSource.volume = volume;
                 break;
             case "SpiderDie":
-                audio.PlayOneShot(SpiderDie);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SpiderDie);
+                audioSource.volume = volume;
                 break;
             case "SpiderHurt":
-                audio.PlayOneShot(SpiderHurt);
-                audio.volume = volume;
+                audioSource.PlayOneShot(SpiderHurt);
+                audioSource.volume = volume;
                 break;
 
             

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3920492488281468367}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DeadBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107699781275823994}
   - component: {fileID: 3841352353585820881}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DeadBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}

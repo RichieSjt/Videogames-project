@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProgresManager : MonoBehaviour
+public class ProgressManager : MonoBehaviour
 {
     public void save()
     {
@@ -28,13 +28,11 @@ public class ProgresManager : MonoBehaviour
     }
     
 
-    private class SaveObject
+    public class SaveObject
     {
         public Vector3 playerPosition;
         public int playerHealth;
         public List<Item> InventoryList = new List<Item>();
     
     }
-
-    
 }

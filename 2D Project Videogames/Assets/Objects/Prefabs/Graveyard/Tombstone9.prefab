@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2938822587576464223}
   - component: {fileID: 2938822587576464220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2938822589065360993}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tombstone9
   m_TagString: Untagged
   m_Icon: {fileID: 0}

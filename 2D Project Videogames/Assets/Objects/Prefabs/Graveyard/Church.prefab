@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6708788000008786051}
   - component: {fileID: 6059768439486792668}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6114157503797154607}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}

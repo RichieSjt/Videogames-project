@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5866874444625094670}
   - component: {fileID: 6074297767567071460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FenceRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8497130243370739470}
   - component: {fileID: 3848365928123120780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_69
   m_TagString: Untagged
   m_Icon: {fileID: 0}

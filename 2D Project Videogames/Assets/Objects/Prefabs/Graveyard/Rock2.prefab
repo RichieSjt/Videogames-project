@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6876388352600373569}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6876388352844651029}
   - component: {fileID: 6876388352844651026}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TilesetGraveyard_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
