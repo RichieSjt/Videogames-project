@@ -11,5 +11,5 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public virtual void ApplyKnockback(){}
+    public virtual void ApplyKnockback(Vector3 direction, float knockBackForce){}
 }

@@ -31,7 +31,7 @@ public class AirSlash : MonoBehaviour
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
             //Apply knockback to the enemies
-            //enemy.ApplyKnockback();
+            enemy.ApplyKnockback(shootDirection, 30);
             Destroy(gameObject);
         }
     }

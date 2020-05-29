@@ -117,6 +117,10 @@ public class SlimeController : Enemy
             Die();
         }
     }
+    public override void ApplyKnockback(Vector3 direction, float knockBackForce)
+    {
+        slimeRigidbody.AddForce(direction.normalized * knockBackForce);
+    }
     private void ShowFloatingText(int damage)
     {
         var go=Instantiate(floatingTextPrefab,transform.position,Quaternion.identity,transform);

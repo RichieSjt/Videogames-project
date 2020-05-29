@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7752858091402383438}
   - component: {fileID: 7752858091402383439}
   - component: {fileID: 603403508}
+  - component: {fileID: 6428104905988765976}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -161,8 +162,6 @@ MonoBehaviour:
   hitBox: {fileID: 3062280507158817443}
   attackDamage: 10
   attackRate: 2
-  fireBallPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
-    type: 3}
   magicDamage: 7
   manaPerAttack: 40
   magicAttackRate: 4
@@ -238,6 +237,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdae243efdc3ac4a8ffba7af4b3f5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6428104905988765976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752858091402383435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcb07403eb37234d90e90362eff8d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
+    type: 3}
+  slashPrefab: {fileID: 0}
+  electricityPrefab: {fileID: 0}
+  playerMS: {fileID: 0}
+  playerAnim: {fileID: 7752858093028244559}
+  fireballDamage: 30
+  fireballManaPerAttack: 40
+  airSlashDamage: 20
+  airSlashManaPerAttack: 20
+  electricityDamage: 20
+  electricPerAttack: 20
 --- !u!1 &7752858093028244554
 GameObject:
   m_ObjectHideFlags: 0

@@ -13376,30 +13376,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7752858092005123257}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &603403508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603403506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcb07403eb37234d90e90362eff8d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireballPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
-    type: 3}
-  slashPrefab: {fileID: 0}
-  electricityPrefab: {fileID: 0}
-  playerMS: {fileID: 0}
-  playerAnim: {fileID: 1654983234}
-  fireballDamage: 30
-  fireballManaPerAttack: 40
-  airSlashDamage: 20
-  airSlashManaPerAttack: 20
-  electricityDamage: 20
-  electricPerAttack: 20
 --- !u!1 &618262566
 GameObject:
   m_ObjectHideFlags: 0
@@ -37579,12 +37555,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6041559733162738484, guid: 05e9a28a0a9382c4ebad890c9989e9df,
     type: 3}
   m_PrefabInstance: {fileID: 1648723463}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1654983234 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7752858093028244559, guid: aad46d0c84526654cb68fd6d2dd95bcb,
-    type: 3}
-  m_PrefabInstance: {fileID: 7752858092005123257}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1669868585
 GameObject:
