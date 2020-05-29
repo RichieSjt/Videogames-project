@@ -1,0 +1,1 @@
+{"playerPosition":{"x":7.778530597686768,"y":1.7000001668930054,"z":-0.90168696641922},"playerHealth":55,"currentMagic":0,"numberOfMagicAttacks":0,"InventoryList":[]}

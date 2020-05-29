@@ -215,6 +215,12 @@ public class PlayerController : MonoBehaviour
         healthSystem.Heal(maxHealth);
     }
 
+    private class SaveObject
+    {
+        public Vector3 playerPosition;
+        public int playerHealth;
+    }
+
     public void Load()
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
@@ -225,12 +231,4 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(saveObject.playerPosition.x, saveObject.playerPosition.y, saveObject.playerPosition.z);
         }
     }
-
-    private class SaveObject
-    {
-        public Vector3 playerPosition;
-        public int playerHealth;
-        public List<Item> InventoryList = new List<Item>();
-    
-    } 
 }

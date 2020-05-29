@@ -5,17 +5,26 @@ using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
 {
-    public void save()
+    public virtual void Save()
     {
         SaveObject saveObject = new SaveObject {
             playerPosition = CheckpointDetection.lastCheckpoint,
             playerHealth = PlayerManager.instance.player.GetComponent<HealthSystem>().GetHealth(),
+            currentMagic = MagicController.currentMagic,
+            numberOfMagicAttacks = MagicController.numberOfMagicAttacks,
             InventoryList = Inventory.instance.items,
         };
         string json = JsonUtility.ToJson(saveObject);
 
         File.WriteAllText(Application.dataPath+"/save.txt",json);
-        Debug.Log("File Successfully Saved");
+
+        #region DebugSaveObject
+        Debug.Log("FILE SUCCESSFULLY SAVED");
+        Debug.Log("Player position: " + saveObject.playerPosition);
+        Debug.Log("Player health: " + saveObject.playerHealth);
+        Debug.Log("Magic attacks: " + saveObject.numberOfMagicAttacks);
+        Debug.Log("Current magic: " + saveObject.currentMagic);
+        #endregion
     }
 
     public void Load()
@@ -32,6 +41,8 @@ public class ProgressManager : MonoBehaviour
     {
         public Vector3 playerPosition;
         public int playerHealth;
+        public int currentMagic;
+        public int numberOfMagicAttacks;
         public List<Item> InventoryList = new List<Item>();
     
     }

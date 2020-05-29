@@ -12464,6 +12464,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7752858092005123257}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &603403510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7752858091402383439, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7752858092005123257}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603403506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca25acf1e4db6c4aaf623fc2b859011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618262566
 GameObject:
   m_ObjectHideFlags: 0
@@ -31178,8 +31190,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 8edbadf1e8d66b747afbc5867c7b0a0a, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1958843713}
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40026,8 +40038,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 8edbadf1e8d66b747afbc5867c7b0a0a, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 603403510}
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41972,7 +41984,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958843711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3572ea1d460db24a8c6e2dd083a36a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8edbadf1e8d66b747afbc5867c7b0a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1962746290
