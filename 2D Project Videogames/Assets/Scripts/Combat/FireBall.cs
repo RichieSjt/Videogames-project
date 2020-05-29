@@ -30,7 +30,7 @@ public class FireBall : MonoBehaviour
         {
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
-            //enemy.ApplyKnockback(shootDirection, 200);
+            enemy.ApplyKnockback(shootDirection, 5);
             Destroy(gameObject);
         }
     }
