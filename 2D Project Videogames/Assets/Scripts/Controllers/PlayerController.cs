@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        //SceneManager.GetActiveScene().buildIndex;
         Load();
     }
 
@@ -194,7 +195,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         anim.SetBool("IsDead", true);
 
@@ -203,7 +204,7 @@ public class PlayerController : MonoBehaviour
         //this.enabled = false;
 
         //Go to last checkpoint
-        StartCoroutine(GoLastCheckpoint(1.35f)); 
+        StartCoroutine(GoLastCheckpoint(1.35f));
     }
 
     IEnumerator GoLastCheckpoint(float time)
@@ -216,7 +217,7 @@ public class PlayerController : MonoBehaviour
     }
 
     #region ProgressManager
-    private class SaveObject
+    public class SaveObject
     {
         public Vector3 playerPosition;
         public int playerHealth;
@@ -226,8 +227,8 @@ public class PlayerController : MonoBehaviour
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
             string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
-
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+            
             healthSystem.SetHealth(saveObject.playerHealth);
             transform.position = new Vector3(saveObject.playerPosition.x, saveObject.playerPosition.y, saveObject.playerPosition.z);
         }

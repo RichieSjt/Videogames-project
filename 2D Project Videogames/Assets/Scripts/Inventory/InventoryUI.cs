@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+        Load();
     }
 
     void Update()
@@ -45,4 +48,23 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
+
+    #region ProgressManager
+    public class SaveObject
+    {
+        public List<Item> InventoryList = new List<Item>();
+    }
+
+    public void Load()
+    {
+        if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
+            string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
+            SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+
+            Inventory.instance.items = saveObject.InventoryList;
+
+            UpdateUI();
+        }
+    }
+    #endregion
 }

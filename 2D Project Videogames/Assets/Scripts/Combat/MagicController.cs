@@ -122,8 +122,8 @@ public class MagicController : MonoBehaviour
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
             string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
-
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+            
             currentMagic = saveObject.savedCurrentMagic;
             numberOfMagicAttacks = saveObject.savedMagicAttacks;
         }

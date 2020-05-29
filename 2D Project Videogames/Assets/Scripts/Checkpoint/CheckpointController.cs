@@ -20,6 +20,7 @@ public class CheckpointController : MonoBehaviour
             checkpoint = other.transform.position;
             other.GetComponent<CheckpointDetection>().SetLastCheckpoint(checkpoint);
             checkedpoint = true;
+            //SceneManager.GetActiveScene().buildIndex;
         }
     }
 }

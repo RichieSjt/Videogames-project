@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
 {
-    public virtual void Save()
+    public void Save()
     {
         SaveObject saveObject = new SaveObject {
             playerPosition = CheckpointDetection.lastCheckpoint,
@@ -24,6 +24,7 @@ public class ProgressManager : MonoBehaviour
         Debug.Log("Player health: " + saveObject.playerHealth);
         Debug.Log("Magic attacks: " + saveObject.savedMagicAttacks);
         Debug.Log("Current magic: " + saveObject.savedCurrentMagic);
+        Debug.Log("Items: " + saveObject.InventoryList);
         #endregion
     }
 

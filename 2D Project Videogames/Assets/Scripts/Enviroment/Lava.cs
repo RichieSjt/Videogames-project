@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other) {
-        Debug.Log("Lavaaaaaaaaaaa");
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Player has fallen into lava");
         if(other.gameObject.CompareTag("Player")){
-            other.transform.position=new Vector3(68,5,-1);
+            //Send the player to the last checkpoint
+            other.GetComponent<PlayerController>().Die();
         }
     }
 }
