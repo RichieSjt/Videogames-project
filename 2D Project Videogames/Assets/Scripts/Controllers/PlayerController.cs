@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
         manaSystem.maxMana = maxMana;
         manaSystem.mana = maxMana;
         manaBar.Setup(manaSystem);
+    }
+
+    private void Start()
+    {
+        Load();
     }
 
     private void Update()
@@ -207,5 +213,24 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsDead", false);
         controller.enabled = true;
         healthSystem.Heal(maxHealth);
+    }
+
+    public void Load()
+    {
+        if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
+            string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
+
+            SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
+            healthSystem.SetHealth(saveObject.playerHealth);
+            transform.position = new Vector3(saveObject.playerPosition.x, saveObject.playerPosition.y, saveObject.playerPosition.z);
+        }
+    }
+
+     private class SaveObject
+    {
+        public Vector3 playerPosition;
+        public int playerHealth;
+        public List<Item> InventoryList = new List<Item>();
+    
     }
 }

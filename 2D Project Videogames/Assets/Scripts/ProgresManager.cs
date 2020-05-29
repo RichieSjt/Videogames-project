@@ -23,8 +23,6 @@ public class ProgresManager : MonoBehaviour
             string saveString = File.ReadAllText(Application.dataPath+"/save.txt");
 
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(saveString);
-
-            PlayerManager.instance.player.transform.position= new Vector3 (saveObject.playerPosition.x,saveObject.playerPosition.y,saveObject.playerPosition.z);
             PlayerManager.instance.player.GetComponent<HealthSystem>().SetHealth(saveObject.playerHealth);
             Inventory.instance.items=saveObject.InventoryList;
     }
