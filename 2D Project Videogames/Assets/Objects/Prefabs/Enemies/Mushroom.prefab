@@ -125,7 +125,7 @@ MonoBehaviour:
   lookRadius: 8
   speed: 3
   maxHealth: 30
-  floatingTextPrefab: {fileID: 5901154125420934263, guid: d2661cf55e712a144bfc766ca9bf6525,
+  floatingTextPrefab: {fileID: 8366938611706664825, guid: ccd13f2925000d043b7a54e6efae1a6c,
     type: 3}
   hitBox: {fileID: 2989090717679242509}
   attackDamage: 10

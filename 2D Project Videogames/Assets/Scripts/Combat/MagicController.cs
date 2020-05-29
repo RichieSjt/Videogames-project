@@ -112,12 +112,6 @@ public class MagicController : MonoBehaviour
     }
 
     #region ProgressManager
-    public class SaveObject
-    {
-        public int savedCurrentMagic;
-        public int savedMagicAttacks;
-    }
-
     public void Load()
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){

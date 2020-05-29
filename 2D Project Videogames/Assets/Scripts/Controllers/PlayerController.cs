@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        //SceneManager.GetActiveScene().buildIndex;
         Load();
     }
 
@@ -217,12 +216,6 @@ public class PlayerController : MonoBehaviour
     }
 
     #region ProgressManager
-    public class SaveObject
-    {
-        public Vector3 playerPosition;
-        public int playerHealth;
-    }
-
     public void Load()
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){

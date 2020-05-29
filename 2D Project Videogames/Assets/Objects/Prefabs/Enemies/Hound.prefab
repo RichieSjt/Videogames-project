@@ -225,8 +225,8 @@ MonoBehaviour:
   anim: {fileID: 8182832626873412905}
   lookRadius: 8
   speed: 30
-  maxHealth: 30
-  floatingTextPrefab: {fileID: 5901154125420934263, guid: d2661cf55e712a144bfc766ca9bf6525,
+  maxHealth: 50
+  floatingTextPrefab: {fileID: 6893144837549786708, guid: 51af1e53a5027154994e6ac968d79331,
     type: 3}
   hitBox: {fileID: 3698730317972108516}
   attackDamage: 20

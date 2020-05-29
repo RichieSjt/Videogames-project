@@ -50,11 +50,6 @@ public class InventoryUI : MonoBehaviour
     }
 
     #region ProgressManager
-    public class SaveObject
-    {
-        public List<Item> InventoryList = new List<Item>();
-    }
-
     public void Load()
     {
         if (System.IO.File.Exists(Application.dataPath+"/save.txt")){
