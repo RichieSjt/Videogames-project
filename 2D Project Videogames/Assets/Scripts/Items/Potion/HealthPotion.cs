@@ -15,7 +15,7 @@ public class HealthPotion : Potion
             //heal the player
             playerHS.Heal(healAmount);
             //Remove the potion from the inventory
-            base.RemoveFromInventory();   
+            base.RemoveFromInventory(); 
         }
             
     }

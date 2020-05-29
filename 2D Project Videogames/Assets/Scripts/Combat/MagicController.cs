@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MagicController : MonoBehaviour
 {
-    [Header("Animator")]
-    public Animator playerAnim;
-    
-    [Header("Magic attack settings")]
     public static int currentMagic;
-    private int numberOfMagicAttacks = 3;
+    public static int numberOfMagicAttacks = 0;
+
+    [Header("Magic attack settings")]
     public GameObject fireballPrefab;
     public GameObject slashPrefab;
     public GameObject electricityPrefab;
     public ManaSystem playerMS;
+
+    [Header("Animator")]
+    public Animator playerAnim;
     
     [Header("Fire magic settings")]
     public int fireballDamage = 30;
@@ -37,18 +38,25 @@ public class MagicController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(currentMagic < numberOfMagicAttacks)
-                currentMagic += 1;
-            else
+            if(currentMagic == 0)
                 currentMagic = 0;
-            
-            Debug.Log("Current magic index: " + currentMagic);
+            else
+            {
+                if(currentMagic < numberOfMagicAttacks)
+                currentMagic += 1;
+                else
+                    currentMagic = 1;
+                Debug.Log("Current magic index: " + currentMagic);
+            }
         }
     }
     public void InstantiateMagicAttack(Vector3 shootDirection, Transform firepoint)
     {  
+        if(numberOfMagicAttacks <= 0)
+                return;
+
         //Instantiate fireball
-        if(currentMagic == 0)
+        if(currentMagic == 1)
         {
             Debug.Log("Instantiating fire magic");
 
@@ -71,7 +79,7 @@ public class MagicController : MonoBehaviour
             }
         }
         //Instantitate air slash
-        else if(currentMagic == 1)
+        else if(currentMagic == 2)
         {
             Debug.Log("Instantiating air magic");
             if(playerMS.mana >= airSlashManaPerAttack)
@@ -95,7 +103,7 @@ public class MagicController : MonoBehaviour
             
         }
         //Instantitate electricity
-        else if(currentMagic == 2)
+        else if(currentMagic == 3)
         {
             Debug.Log("Instantiating electricity magic");
         }
