@@ -221,10 +221,11 @@ MonoBehaviour:
   slopeThereshold: 0.55
   maxHealth: 100
   healthSystem: {fileID: 7752858091402383438}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 298862108692694296, guid: 7338de0561e2f0049982247d9b2a3603,
+    type: 3}
   maxMana: 100
   manaSystem: {fileID: 6333747557553576229}
-  manaBar: {fileID: 0}
+  manaBar: {fileID: 2757506115275650592, guid: 22ae4acaa168ae4459cdff20b8b16979, type: 3}
 --- !u!114 &603403508
 MonoBehaviour:
   m_ObjectHideFlags: 0
