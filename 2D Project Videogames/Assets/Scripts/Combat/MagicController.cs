@@ -27,7 +27,7 @@ public class MagicController : MonoBehaviour
 
     [Header("Electricity magic settings")]
     public int electricityDamage = 20;
-    public int electricPerAttack = 20;
+    public int electricityManaPerAttack = 20;
 
     private void Start()
     {
@@ -99,8 +99,8 @@ public class MagicController : MonoBehaviour
                     rotationVector.z = -90;
                 
                 GameObject airSlash = Instantiate(slashPrefab, firepoint.position, Quaternion.Euler(rotationVector));
-                slashPrefab.GetComponent<AirSlash>().SetMagicDamage(fireballDamage);
-                slashPrefab.GetComponent<AirSlash>().Setup(shootDirection);
+                airSlash.GetComponent<AirSlash>().SetMagicDamage(fireballDamage);
+                airSlash.GetComponent<AirSlash>().Setup(shootDirection);
             }
             
         }
@@ -108,6 +108,25 @@ public class MagicController : MonoBehaviour
         else if(currentMagic == 3)
         {
             Debug.Log("Instantiating electricity magic");
+            Debug.Log("Instantiating air magic");
+            if(playerMS.mana >= electricityManaPerAttack)
+            {  
+                playerAnim.SetTrigger("Attack");
+                playerMS.ReduceMana(electricityManaPerAttack);
+                //SoundManager.PlaySound("FireBall", 1f);
+                
+                var rotationVector = transform.rotation.eulerAngles;
+
+                //Rotation may depend on prefab
+                if(shootDirection.x > 0)
+                    rotationVector.z = 90;
+                else
+                    rotationVector.z = -90;
+                
+                GameObject electricity = Instantiate(electricityPrefab, firepoint.position, Quaternion.Euler(rotationVector));
+                electricity.GetComponent<ElectricRay>().SetMagicDamage(electricityDamage);
+                electricity.GetComponent<ElectricRay>().Setup(shootDirection);
+            }
         }
     }
 
