@@ -8,6 +8,8 @@ public class MagicController : MonoBehaviour
     public static int currentMagic;
     public static int numberOfMagicAttacks = 0;
 
+    public ManaBarColor manaBarColor;
+
     [Header("Magic attack settings")]
     public GameObject fireballPrefab;
     public GameObject slashPrefab;
@@ -31,6 +33,7 @@ public class MagicController : MonoBehaviour
 
     private void Start()
     {
+        manaBarColor = ManaBarColor.instance;
         currentMagic = 0;
         Load();
         playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
@@ -50,6 +53,7 @@ public class MagicController : MonoBehaviour
                     currentMagic = 1;
                 Debug.Log("Current magic index: " + currentMagic);
             }
+            manaBarColor.ChangeBarColor(currentMagic);
         }
     }
     public void InstantiateMagicAttack(Vector3 shootDirection, Transform firepoint)

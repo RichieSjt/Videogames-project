@@ -1,0 +1,1 @@
+{"playerPosition":{"x":-46.60966491699219,"y":0.4786381721496582,"z":-1.4902892112731934},"playerHealth":100,"savedCurrentMagic":1,"savedMagicAttacks":3,"InventoryList":[{"instanceID":16466}],"currentScene":1}

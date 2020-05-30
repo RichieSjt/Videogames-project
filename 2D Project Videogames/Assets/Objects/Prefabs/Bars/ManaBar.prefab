@@ -659,6 +659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062454562385119836}
+  - component: {fileID: 3707042650529678498}
   - component: {fileID: 1062454562385119811}
   m_Layer: 0
   m_Name: BarSprite
@@ -681,6 +682,22 @@ Transform:
   m_Father: {fileID: 1062454563210664514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3707042650529678498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062454562385119837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384adbebfd15bd49b5421e648d0b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barSprite: {fileID: 1062454562385119811}
+  fire: {r: 1, g: 0.39, b: 0, a: 1}
+  air: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  electricity: {r: 1, g: 0.98, b: 0, a: 1}
 --- !u!212 &1062454562385119811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,7 +738,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7effcacc093990d419eed13a5543a3e1, type: 3}
-  m_Color: {r: 0, g: 0.5773268, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3882353, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
