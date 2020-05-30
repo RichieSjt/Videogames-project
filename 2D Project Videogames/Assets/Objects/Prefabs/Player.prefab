@@ -253,7 +253,8 @@ MonoBehaviour:
   fireballPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
     type: 3}
   slashPrefab: {fileID: 0}
-  electricityPrefab: {fileID: 0}
+  electricityPrefab: {fileID: 7457988762135256714, guid: 8528737b931b2b04a81493847bb46672,
+    type: 3}
   playerMS: {fileID: 0}
   playerAnim: {fileID: 7752858093028244559}
   fireballDamage: 30

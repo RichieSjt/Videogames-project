@@ -76,6 +76,9 @@ public class SwitchLevel : MonoBehaviour
             savedMagicAttacks = this.savedMagicAttacks,
             InventoryList = this.InventoryList,
             currentScene = sceneIndex,
+            savedKey1 = this.savedKey1,
+            savedKey2 = this.savedKey2,
+            savedKey3 = this.savedKey3,
         };
         string json = JsonUtility.ToJson(saveObject);
 
@@ -91,6 +94,9 @@ public class SwitchLevel : MonoBehaviour
             savedCurrentMagic = saveObject.savedCurrentMagic;
             savedMagicAttacks = saveObject.savedMagicAttacks;
             InventoryList = saveObject.InventoryList;
+            savedKey1 = saveObject.savedKey1;
+            savedKey2 = saveObject.savedKey2;
+            savedKey3 = saveObject.savedKey3;
         }
     }
     #endregion
