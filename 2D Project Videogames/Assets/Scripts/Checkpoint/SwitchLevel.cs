@@ -13,6 +13,9 @@ public class SwitchLevel : MonoBehaviour
     private int savedMagicAttacks;
     private List<Item> InventoryList = new List<Item>();
     private int currentScene;
+    private bool savedKey1;
+    private bool savedKey2;
+    private bool savedKey3;
 
 
     [Header("Scene index to change")]
@@ -77,16 +80,6 @@ public class SwitchLevel : MonoBehaviour
         string json = JsonUtility.ToJson(saveObject);
 
         File.WriteAllText(Application.dataPath+"/save.txt",json);
-
-        /*#region DebugSaveObject
-        Debug.Log("FILE SUCCESSFULLY SAVED");
-        Debug.Log("Player position: " + saveObject.playerPosition);
-        Debug.Log("Player health: " + saveObject.playerHealth);
-        Debug.Log("Magic attacks: " + saveObject.savedMagicAttacks);
-        Debug.Log("Current magic: " + saveObject.savedCurrentMagic);
-        Debug.Log("Items: " + saveObject.InventoryList);
-        Debug.Log("Scene index: " + saveObject.currentScene);
-        #endregion*/
     }
     public void Load()
     {

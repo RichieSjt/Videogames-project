@@ -11,4 +11,7 @@ public class SaveObject
     public int savedMagicAttacks;
     public List<Item> InventoryList = new List<Item>();
     public int currentScene;
+    public bool savedKey1;
+    public bool savedKey2;
+    public bool savedKey3;
 }

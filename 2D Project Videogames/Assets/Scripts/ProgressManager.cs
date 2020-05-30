@@ -15,6 +15,9 @@ public class ProgressManager : MonoBehaviour
             savedMagicAttacks = MagicController.numberOfMagicAttacks,
             InventoryList = Inventory.instance.items,
             currentScene = SceneManager.GetActiveScene().buildIndex,
+            savedKey1 = KeysManager.key1,
+            savedKey2 = KeysManager.key2,
+            savedKey3 = KeysManager.key3,
         };
         string json = JsonUtility.ToJson(saveObject);
 
@@ -28,6 +31,9 @@ public class ProgressManager : MonoBehaviour
         Debug.Log("Current magic: " + saveObject.savedCurrentMagic);
         Debug.Log("Items: " + saveObject.InventoryList);
         Debug.Log("Scene index: " + saveObject.currentScene);
+        Debug.Log("Key 1: " + saveObject.savedKey1);
+        Debug.Log("Key 2: " + saveObject.savedKey2);
+        Debug.Log("Key 3: " + saveObject.savedKey3);
         #endregion
     }
 
