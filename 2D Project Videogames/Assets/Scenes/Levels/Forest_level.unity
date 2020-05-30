@@ -31135,6 +31135,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ae4acaa168ae4459cdff20b8b16979, type: 3}
+--- !u!114 &494147963679910638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3707042650529678498, guid: 22ae4acaa168ae4459cdff20b8b16979,
+    type: 3}
+  m_PrefabInstance: {fileID: 494147963679910637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384adbebfd15bd49b5421e648d0b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &604898794926261431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1062454562792402522, guid: 22ae4acaa168ae4459cdff20b8b16979,
@@ -32171,6 +32183,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983048943}
     m_Modifications:
+    - target: {fileID: 6428104905988765976, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+        type: 3}
+      propertyPath: manaBarColor
+      value: 
+      objectReference: {fileID: 494147963679910638}
     - target: {fileID: 7752858091402383434, guid: aad46d0c84526654cb68fd6d2dd95bcb,
         type: 3}
       propertyPath: m_LocalPosition.x

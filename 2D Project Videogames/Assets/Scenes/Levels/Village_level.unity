@@ -10385,6 +10385,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1060809954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2757506115275650592, guid: 22ae4acaa168ae4459cdff20b8b16979,
+    type: 3}
+  m_PrefabInstance: {fileID: 6497978863404199508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1003c4a63342ac649bf5b30e532468e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1061285238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8343680251694605208, guid: adc1b2252abd30848b74ae33c5c5e7c0,
@@ -21617,6 +21629,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 560858548}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2131674726 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 298862108692694296, guid: 7338de0561e2f0049982247d9b2a3603,
+    type: 3}
+  m_PrefabInstance: {fileID: 1427672951438567718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc89ed2e20ceec43b96d9f50f6586f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &2132466944
 Mesh:
   m_ObjectHideFlags: 0
@@ -29280,6 +29304,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ae4acaa168ae4459cdff20b8b16979, type: 3}
+--- !u!114 &6497978863404199509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3707042650529678498, guid: 22ae4acaa168ae4459cdff20b8b16979,
+    type: 3}
+  m_PrefabInstance: {fileID: 6497978863404199508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384adbebfd15bd49b5421e648d0b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &6661301745151918012
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -30933,6 +30969,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983048943}
     m_Modifications:
+    - target: {fileID: 6428104905988765976, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+        type: 3}
+      propertyPath: manaBarColor
+      value: 
+      objectReference: {fileID: 6497978863404199509}
     - target: {fileID: 7752858091402383434, guid: aad46d0c84526654cb68fd6d2dd95bcb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30993,6 +31034,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7752858091402383439, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+        type: 3}
+      propertyPath: manaBar
+      value: 
+      objectReference: {fileID: 1060809954}
+    - target: {fileID: 7752858091402383439, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 2131674726}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad46d0c84526654cb68fd6d2dd95bcb, type: 3}
 --- !u!1 &7752858092005123258 stripped

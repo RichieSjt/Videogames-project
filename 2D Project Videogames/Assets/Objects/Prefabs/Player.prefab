@@ -221,11 +221,10 @@ MonoBehaviour:
   slopeThereshold: 0.55
   maxHealth: 100
   healthSystem: {fileID: 7752858091402383438}
-  healthBar: {fileID: 298862108692694296, guid: 7338de0561e2f0049982247d9b2a3603,
-    type: 3}
+  healthBar: {fileID: 0}
   maxMana: 100
   manaSystem: {fileID: 6333747557553576229}
-  manaBar: {fileID: 2757506115275650592, guid: 22ae4acaa168ae4459cdff20b8b16979, type: 3}
+  manaBar: {fileID: 0}
 --- !u!114 &603403508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcb07403eb37234d90e90362eff8d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaBarColor: {fileID: 0}
   fireballPrefab: {fileID: 3647420224353231346, guid: 31b1de4f4cd796f438dc5ee87a2e2a7f,
     type: 3}
   slashPrefab: {fileID: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
   airSlashDamage: 20
   airSlashManaPerAttack: 20
   electricityDamage: 20
-  electricPerAttack: 20
+  electricityManaPerAttack: 20
 --- !u!1 &7752858093028244554
 GameObject:
   m_ObjectHideFlags: 0

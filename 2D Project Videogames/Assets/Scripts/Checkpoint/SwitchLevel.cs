@@ -53,7 +53,7 @@ public class SwitchLevel : MonoBehaviour
         //Boss level
         if (sceneIndex == 4)
         {
-            playerPosition = new Vector3(10.93473f,92.32354f,-261.4099f);
+            playerPosition = new Vector3(-11.36f,-3.760002f,0);
         }
         //Graveyard level
     }

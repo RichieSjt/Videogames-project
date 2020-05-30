@@ -7199,6 +7199,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa785ceda684a744ab41fb95c4878828, type: 3}
+--- !u!114 &403512365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3707042650529678498, guid: 22ae4acaa168ae4459cdff20b8b16979,
+    type: 3}
+  m_PrefabInstance: {fileID: 494147963679910637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384adbebfd15bd49b5421e648d0b88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414047089
 GameObject:
   m_ObjectHideFlags: 0
@@ -15441,7 +15453,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh185752
+  m_Name: pb_Mesh44566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18552,7 +18564,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.37647063, g: 0.52156866, b: 0.03137255, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -77842,6 +77854,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983048943}
     m_Modifications:
+    - target: {fileID: 6428104905988765976, guid: aad46d0c84526654cb68fd6d2dd95bcb,
+        type: 3}
+      propertyPath: manaBarColor
+      value: 
+      objectReference: {fileID: 403512365}
     - target: {fileID: 7752858091402383434, guid: aad46d0c84526654cb68fd6d2dd95bcb,
         type: 3}
       propertyPath: m_LocalPosition.x

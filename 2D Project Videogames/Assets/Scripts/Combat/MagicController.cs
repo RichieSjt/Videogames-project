@@ -33,7 +33,6 @@ public class MagicController : MonoBehaviour
 
     private void Start()
     {
-        manaBarColor = ManaBarColor.instance;
         currentMagic = 0;
         Load();
         playerMS = PlayerManager.instance.player.GetComponent<ManaSystem>();
