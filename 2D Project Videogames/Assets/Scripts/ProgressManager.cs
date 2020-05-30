@@ -24,7 +24,7 @@ public class ProgressManager : MonoBehaviour
         File.WriteAllText(Application.dataPath+"/save.txt",json);
 
         #region DebugSaveObject
-        Debug.Log("FILE SUCCESSFULLY SAVED");
+        /*Debug.Log("FILE SUCCESSFULLY SAVED");
         Debug.Log("Player position: " + saveObject.playerPosition);
         Debug.Log("Player health: " + saveObject.playerHealth);
         Debug.Log("Magic attacks: " + saveObject.savedMagicAttacks);
@@ -33,7 +33,7 @@ public class ProgressManager : MonoBehaviour
         Debug.Log("Scene index: " + saveObject.currentScene);
         Debug.Log("Key 1: " + saveObject.savedKey1);
         Debug.Log("Key 2: " + saveObject.savedKey2);
-        Debug.Log("Key 3: " + saveObject.savedKey3);
+        Debug.Log("Key 3: " + saveObject.savedKey3);*/
         #endregion
     }
 
