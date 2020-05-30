@@ -1,0 +1,1 @@
+{"playerPosition":{"x":-13.632652282714844,"y":-0.28999999165534975,"z":0.0},"playerHealth":80,"savedCurrentMagic":1,"savedMagicAttacks":3,"InventoryList":[],"currentScene":2,"savedKey1":true,"savedKey2":true,"savedKey3":true}
