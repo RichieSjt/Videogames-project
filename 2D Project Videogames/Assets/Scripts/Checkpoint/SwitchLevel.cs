@@ -40,25 +40,19 @@ public class SwitchLevel : MonoBehaviour
     {
         //Forest level
         if (sceneIndex == 1)
-        {
             playerPosition = new Vector3(-72f,-0.33f,0);
-        }
         //Village level
         if (sceneIndex == 2)
-        {
             playerPosition = new Vector3(-15.88f,-0.3299999f,0);
-        }
         //Castle level
         if (sceneIndex == 3)
-        {
             playerPosition = new Vector3(-21f,-0.33f,0);
-        }
         //Boss level
         if (sceneIndex == 4)
-        {
             playerPosition = new Vector3(-11.36f,-3.760002f,0);
-        }
         //Graveyard level
+        if (sceneIndex == 5)
+            playerPosition = new Vector3(-85.22f,-2.8f,-33.12f);
     }
 
     private void ChangeScene()

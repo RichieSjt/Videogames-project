@@ -26,12 +26,15 @@ public class DemonBossController : Enemy
     [Header("Enemies to spawn")]
     public GameObject[] enemies;
 
+    public bool isAlive;
+
 
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.maxHealth = maxHealth;
         healthSystem.health = maxHealth;
+        isAlive = true;
     }
 
     private void Update()
@@ -71,6 +74,7 @@ public class DemonBossController : Enemy
     private void Die()
     {
         //Disable enemy
+        isAlive = false;
         GetComponent<CapsuleCollider>().enabled = false;
         this.enabled = false;
         StartCoroutine(DestroyAfterTime(deadDuration));

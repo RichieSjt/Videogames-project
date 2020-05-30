@@ -10,8 +10,8 @@ public class CheckpointController : MonoBehaviour
     
     private void Update()
     {
-        if(checkedpoint)
-            Destroy(gameObject);
+        /*if(checkedpoint)
+            Destroy(gameObject);*/
     }
 
     private void OnTriggerEnter(Collider other)

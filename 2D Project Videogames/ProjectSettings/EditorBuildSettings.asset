@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Boss_level.unity
     guid: 2f6816c62c8b37645b1bd8726b50841c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Graveyard_level.unity
+    guid: 329f982d9a2268e4994fc23c4e30ebf2
   m_configObjects: {}
