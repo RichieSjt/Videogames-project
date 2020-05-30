@@ -9,6 +9,8 @@ public class KeyPickupController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            SoundManager.PlaySound("PickUpKey", 1f);
+
             if(this.tag == "Key1")
             {
                 KeysManager.key1 = true;

@@ -7,6 +7,7 @@ public class EndGameChest : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(KeysManager.CheckKeys())
         {
+            SoundManager.PlaySound("UseEndGameChest", 1f);
             Debug.Log("The player has all the keys, the game ends");
             //End game
         }

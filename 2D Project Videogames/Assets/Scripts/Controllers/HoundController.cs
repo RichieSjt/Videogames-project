@@ -90,7 +90,10 @@ public class HoundController : Enemy
         hitBox.GetComponent<HitBox>().EnableHitBox();
         Collider hittedEnemy = hitBox.GetComponent<HitBox>().GetHittedObject("Player");
         if (hittedEnemy != null)
+        {
+            SoundManager.PlaySound("HoundGrowl", 0.3f);
             hittedEnemy.GetComponent<PlayerController>().TakeDamage(attackDamage);
+        }
     }
 
     public override void TakeDamage(int damage)

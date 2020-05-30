@@ -28,8 +28,8 @@ public class SwitchLevel : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Load();
-            Invoke("Save", 0.5f);
-            Invoke("ChangeScene", 1f);
+            Invoke("Save", 0.2f);
+            Invoke("ChangeScene", 0.5f);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip SlimeMove,SpiderAttack,SpiderDie,SpiderHurt,SpiderMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire;
+    public static AudioClip SlimeMove,SpiderAttack,SpiderDie,SpiderHurt,SpiderMove,SlimeDie,FireBall,SwordSlashSkeleton,SwordSlashPlayer,SkeletonDie,SkeletonHurt,PlayerHurt,BossFire,AirMagic,CastleTheme,ElectricMagic,HoundGrowl,MainMenuTheme,PickUpKey,UseEndGameChest,UseOrb;
     static AudioSource audioSource;
 
     void Start(){
@@ -22,6 +22,14 @@ public class SoundManager : MonoBehaviour
         SpiderAttack = Resources.Load<AudioClip>("SpiderAttack");
         SpiderDie = Resources.Load<AudioClip>("SpiderDie");
         SpiderHurt = Resources.Load<AudioClip>("SpiderHurt");
+        AirMagic = Resources.Load<AudioClip>("AirMagic");
+        ElectricMagic = Resources.Load<AudioClip>("ElectricMagic");
+        HoundGrowl = Resources.Load<AudioClip>("HoundGrowl");
+        PickUpKey = Resources.Load<AudioClip>("PickUpKey");
+        UseEndGameChest = Resources.Load<AudioClip>("UseEndGameChest");
+        UseOrb = Resources.Load<AudioClip>("UseOrb");
+        
+
         
 
         audioSource = GetComponent<AudioSource>();
@@ -83,8 +91,30 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(SpiderHurt);
                 audioSource.volume = volume;
                 break;
-
-            
+            case "AirMagic":
+                audioSource.PlayOneShot(AirMagic);
+                audioSource.volume = volume;
+                break;
+            case "ElectricMagic":
+                audioSource.PlayOneShot(ElectricMagic);
+                audioSource.volume = volume;
+                break;
+            case "HoundGrowl":
+                audioSource.PlayOneShot(HoundGrowl);
+                audioSource.volume = volume;
+                break;
+            case "PickUpKey":
+                audioSource.PlayOneShot(PickUpKey);
+                audioSource.volume = volume;
+                break;
+            case "UseEndGameChest":
+                audioSource.PlayOneShot(UseEndGameChest);
+                audioSource.volume = volume;
+                break;
+            case "UseOrb":
+                audioSource.PlayOneShot(UseOrb);
+                audioSource.volume = volume;
+                break;
         }
     }
 }

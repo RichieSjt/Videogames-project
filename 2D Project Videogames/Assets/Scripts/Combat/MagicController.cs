@@ -88,7 +88,7 @@ public class MagicController : MonoBehaviour
             {  
                 playerAnim.SetTrigger("Attack");
                 playerMS.ReduceMana(airSlashManaPerAttack);
-                //SoundManager.PlaySound("FireBall", 1f);
+                SoundManager.PlaySound("AirMagic", 1f);
                 
                 var rotationVector = transform.rotation.eulerAngles;
 
@@ -113,7 +113,7 @@ public class MagicController : MonoBehaviour
             {  
                 playerAnim.SetTrigger("Attack");
                 playerMS.ReduceMana(electricityManaPerAttack);
-                //SoundManager.PlaySound("FireBall", 1f);
+                SoundManager.PlaySound("ElectricMagic", 1f);
                 
                 var rotationVector = transform.rotation.eulerAngles;
 
